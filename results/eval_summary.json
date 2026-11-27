@@ -1,0 +1,5454 @@
+{
+  "generated_at": "2026-11-26T03:35:55Z",
+  "config": {
+    "device": "cuda",
+    "seed": 0,
+    "num_envs": 96,
+    "max_turns": 200,
+    "games_per_pair": 1000,
+    "games_per_table": 1000,
+    "behaviour_games_per_table": 500,
+    "probe_scenarios": 1000,
+    "exploiter_games": 1000,
+    "exploiter_steps": 500000
+  },
+  "models": {
+    "PFSP-PPO": "results/ppo_pfsp_2p/final.pt",
+    "Naive-PPO": "results/ppo_naive_2p/final.pt",
+    "NFSP": "results/nfsp_2p/final.pt",
+    "Double-DQN": "results/ddqn_pfsp_2p/final.pt"
+  },
+  "round_robin_2p": {
+    "games_per_pair": 1000,
+    "total_games": 36000,
+    "agents": [
+      "PFSP-PPO",
+      "Naive-PPO",
+      "NFSP",
+      "Double-DQN",
+      "CardCounter",
+      "Honest",
+      "Cautious",
+      "Bluffer",
+      "Random"
+    ],
+    "matrix": [
+      [
+        0.5,
+        0.538,
+        0.7,
+        0.629,
+        0.773,
+        0.78,
+        0.764,
+        0.817,
+        0.847
+      ],
+      [
+        0.462,
+        0.5,
+        0.704,
+        0.595,
+        0.747,
+        0.682,
+        0.668,
+        0.691,
+        0.752
+      ],
+      [
+        0.3,
+        0.296,
+        0.5,
+        0.32,
+        0.52,
+        0.515,
+        0.464,
+        0.693,
+        0.75
+      ],
+      [
+        0.371,
+        0.405,
+        0.68,
+        0.5,
+        0.901,
+        0.894,
+        0.812,
+        0.735,
+        0.73
+      ],
+      [
+        0.227,
+        0.253,
+        0.48,
+        0.099,
+        0.5,
+        0.431,
+        0.511,
+        0.93,
+        0.903
+      ],
+      [
+        0.22,
+        0.318,
+        0.485,
+        0.103,
+        0.492,
+        0.5,
+        0.515,
+        0.88,
+        0.914
+      ],
+      [
+        0.236,
+        0.332,
+        0.536,
+        0.187,
+        0.422,
+        0.392,
+        0.5,
+        0.957,
+        0.932
+      ],
+      [
+        0.183,
+        0.309,
+        0.307,
+        0.265,
+        0.07,
+        0.12,
+        0.043,
+        0.5,
+        0.527
+      ],
+      [
+        0.153,
+        0.248,
+        0.25,
+        0.27,
+        0.097,
+        0.086,
+        0.068,
+        0.473,
+        0.5
+      ]
+    ],
+    "matrix_ci": [
+      [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.5070132970793998,
+          0.5686958692756982
+        ],
+        [
+          0.6708761390827828,
+          0.7275931575229951
+        ],
+        [
+          0.5986190226548378,
+          0.6583936736558891
+        ],
+        [
+          0.7460212141343303,
+          0.7978893757325567
+        ],
+        [
+          0.7532805086371258,
+          0.8045765066109635
+        ],
+        [
+          0.7367028474727885,
+          0.7892766240468384
+        ],
+        [
+          0.7918366762890631,
+          0.839737158831095
+        ],
+        [
+          0.823363445235336,
+          0.8679807843756888
+        ]
+      ],
+      [
+        [
+          0.43130413072430196,
+          0.4929867029206003
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.6749696568758727,
+          0.7314690256620207
+        ],
+        [
+          0.5642673076613368,
+          0.6250056082264076
+        ],
+        [
+          0.7191453808937036,
+          0.7729642004144321
+        ],
+        [
+          0.6524865706462925,
+          0.7101204892649656
+        ],
+        [
+          0.6382178440412442,
+          0.6964963651076094
+        ],
+        [
+          0.6616750359751813,
+          0.7188631422833365
+        ],
+        [
+          0.7243035580250244,
+          0.7777677556982557
+        ]
+      ],
+      [
+        [
+          0.2724068424770048,
+          0.3291238609172172
+        ],
+        [
+          0.26853097433797923,
+          0.32503034312412726
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.29182400898144156,
+          0.3495536240733583
+        ],
+        [
+          0.4890177246575191,
+          0.5508292050030589
+        ],
+        [
+          0.4840260675164033,
+          0.5458591297290302
+        ],
+        [
+          0.43328733184788387,
+          0.49498819476307615
+        ],
+        [
+          0.6637186226479856,
+          0.72080424857659
+        ],
+        [
+          0.7222397197409139,
+          0.7758469010163086
+        ]
+      ],
+      [
+        [
+          0.341606326344111,
+          0.40138097734516226
+        ],
+        [
+          0.37499439177359234,
+          0.43573269233866313
+        ],
+        [
+          0.6504463759266418,
+          0.7081759910185584
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.8809263810632503,
+          0.9180045586313347
+        ],
+        [
+          0.8733895811764342,
+          0.9115949331369485
+        ],
+        [
+          0.7866068125887822,
+          0.8350052901162315
+        ],
+        [
+          0.7067846797715454,
+          0.7614167437402437
+        ],
+        [
+          0.7016420587131036,
+          0.756597632383541
+        ]
+      ],
+      [
+        [
+          0.20211062426744336,
+          0.2539787858656698
+        ],
+        [
+          0.22703579958556788,
+          0.28085461910629633
+        ],
+        [
+          0.44917079499694124,
+          0.510982275342481
+        ],
+        [
+          0.08199544136866538,
+          0.11907361893674984
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.40062844376747236,
+          0.46189964890353424
+        ],
+        [
+          0.4800349634365892,
+          0.5418808478767286
+        ],
+        [
+          0.9124853518487167,
+          0.9442236358537061
+        ],
+        [
+          0.8830847944509657,
+          0.9198308382096769
+        ]
+      ],
+      [
+        [
+          0.1954234933890366,
+          0.24671949136287427
+        ],
+        [
+          0.2898795107350345,
+          0.34751342935370755
+        ],
+        [
+          0.4541408702709699,
+          0.5159739324835967
+        ],
+        [
+          0.08565481000508716,
+          0.1233836362324436
+        ],
+        [
+          0.4611041586281342,
+          0.5229570695076347
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.4840260675164033,
+          0.5458591297290302
+        ],
+        [
+          0.8583909241522872,
+          0.8987007393986909
+        ],
+        [
+          0.8949999687497208,
+          0.9298314752242396
+        ]
+      ],
+      [
+        [
+          0.2107233759531616,
+          0.26329715252721153
+        ],
+        [
+          0.30350363489239063,
+          0.36178215595875596
+        ],
+        [
+          0.5050118052369239,
+          0.5667126681521162
+        ],
+        [
+          0.1640478150490631,
+          0.21234773576289442
+        ],
+        [
+          0.3917453086472168,
+          0.4528516656765298
+        ],
+        [
+          0.3622102251883648,
+          0.42261635464451514
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.942580996155916,
+          0.9679213465882865
+        ],
+        [
+          0.9146861384770105,
+          0.9460075421914699
+        ]
+      ],
+      [
+        [
+          0.16026284116890502,
+          0.20816332371093696
+        ],
+        [
+          0.28113685771666347,
+          0.33832496402481854
+        ],
+        [
+          0.27919575142340997,
+          0.3362813773520143
+        ],
+        [
+          0.23858325625975632,
+          0.2932153202284546
+        ],
+        [
+          0.05577636414629404,
+          0.08751464815128336
+        ],
+        [
+          0.10129926060130913,
+          0.14160907584771276
+        ],
+        [
+          0.03207865341171336,
+          0.057419003844084014
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.4960112345098614,
+          0.5577821205319188
+        ]
+      ],
+      [
+        [
+          0.13201921562431126,
+          0.17663655476466403
+        ],
+        [
+          0.2222322443017442,
+          0.2756964419749756
+        ],
+        [
+          0.2241530989836914,
+          0.27776028025908617
+        ],
+        [
+          0.2434023676164589,
+          0.29835794128689647
+        ],
+        [
+          0.08016916179032305,
+          0.1169152055490344
+        ],
+        [
+          0.07016852477576035,
+          0.10500003125027926
+        ],
+        [
+          0.05399245780853015,
+          0.08531386152298948
+        ],
+        [
+          0.4422178794680813,
+          0.5039887654901387
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    ],
+    "head_to_head": [
+      {
+        "games": 1000,
+        "a_wins": 462,
+        "b_wins": 538,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 245,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 217,
+        "successes": 462,
+        "trials": 1000,
+        "rate": 0.462,
+        "ci_low": 0.43130413072430196,
+        "ci_high": 0.4929867029206003,
+        "half_width": 0.03084128609814918,
+        "a": "Naive-PPO",
+        "b": "PFSP-PPO",
+        "a_score_rate": 0.462,
+        "a_seat0_win_rate": 0.49,
+        "a_seat1_win_rate": 0.434
+      },
+      {
+        "games": 1000,
+        "a_wins": 300,
+        "b_wins": 700,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 156,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 144,
+        "successes": 300,
+        "trials": 1000,
+        "rate": 0.3,
+        "ci_low": 0.2724068424770048,
+        "ci_high": 0.3291238609172172,
+        "half_width": 0.028358509220106187,
+        "a": "NFSP",
+        "b": "PFSP-PPO",
+        "a_score_rate": 0.3,
+        "a_seat0_win_rate": 0.312,
+        "a_seat1_win_rate": 0.288
+      },
+      {
+        "games": 1000,
+        "a_wins": 371,
+        "b_wins": 629,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 180,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 191,
+        "successes": 371,
+        "trials": 1000,
+        "rate": 0.371,
+        "ci_low": 0.341606326344111,
+        "ci_high": 0.40138097734516226,
+        "half_width": 0.02988732550052564,
+        "a": "Double-DQN",
+        "b": "PFSP-PPO",
+        "a_score_rate": 0.371,
+        "a_seat0_win_rate": 0.36,
+        "a_seat1_win_rate": 0.382
+      },
+      {
+        "games": 1000,
+        "a_wins": 227,
+        "b_wins": 773,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 112,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 115,
+        "successes": 227,
+        "trials": 1000,
+        "rate": 0.227,
+        "ci_low": 0.20211062426744336,
+        "ci_high": 0.2539787858656698,
+        "half_width": 0.02593408079911322,
+        "a": "CardCounter",
+        "b": "PFSP-PPO",
+        "a_score_rate": 0.227,
+        "a_seat0_win_rate": 0.224,
+        "a_seat1_win_rate": 0.23
+      },
+      {
+        "games": 1000,
+        "a_wins": 220,
+        "b_wins": 780,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 106,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 114,
+        "successes": 220,
+        "trials": 1000,
+        "rate": 0.22,
+        "ci_low": 0.1954234933890366,
+        "ci_high": 0.24671949136287427,
+        "half_width": 0.02564799898691883,
+        "a": "Honest",
+        "b": "PFSP-PPO",
+        "a_score_rate": 0.22,
+        "a_seat0_win_rate": 0.212,
+        "a_seat1_win_rate": 0.228
+      },
+      {
+        "games": 1000,
+        "a_wins": 236,
+        "b_wins": 764,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 115,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 121,
+        "successes": 236,
+        "trials": 1000,
+        "rate": 0.236,
+        "ci_low": 0.2107233759531616,
+        "ci_high": 0.26329715252721153,
+        "half_width": 0.026286888287024968,
+        "a": "Cautious",
+        "b": "PFSP-PPO",
+        "a_score_rate": 0.236,
+        "a_seat0_win_rate": 0.23,
+        "a_seat1_win_rate": 0.242
+      },
+      {
+        "games": 1000,
+        "a_wins": 183,
+        "b_wins": 817,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 87,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 96,
+        "successes": 183,
+        "trials": 1000,
+        "rate": 0.183,
+        "ci_low": 0.16026284116890502,
+        "ci_high": 0.20816332371093696,
+        "half_width": 0.02395024127101597,
+        "a": "Bluffer",
+        "b": "PFSP-PPO",
+        "a_score_rate": 0.183,
+        "a_seat0_win_rate": 0.174,
+        "a_seat1_win_rate": 0.192
+      },
+      {
+        "games": 1000,
+        "a_wins": 847,
+        "b_wins": 153,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 427,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 420,
+        "successes": 847,
+        "trials": 1000,
+        "rate": 0.847,
+        "ci_low": 0.823363445235336,
+        "ci_high": 0.8679807843756888,
+        "half_width": 0.02230866957017641,
+        "a": "PFSP-PPO",
+        "b": "Random",
+        "a_score_rate": 0.847,
+        "a_seat0_win_rate": 0.854,
+        "a_seat1_win_rate": 0.84
+      },
+      {
+        "games": 1000,
+        "a_wins": 296,
+        "b_wins": 704,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 154,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 142,
+        "successes": 296,
+        "trials": 1000,
+        "rate": 0.296,
+        "ci_low": 0.26853097433797923,
+        "ci_high": 0.32503034312412726,
+        "half_width": 0.028249684393074015,
+        "a": "NFSP",
+        "b": "Naive-PPO",
+        "a_score_rate": 0.296,
+        "a_seat0_win_rate": 0.308,
+        "a_seat1_win_rate": 0.284
+      },
+      {
+        "games": 1000,
+        "a_wins": 405,
+        "b_wins": 595,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 206,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 199,
+        "successes": 405,
+        "trials": 1000,
+        "rate": 0.405,
+        "ci_low": 0.37499439177359234,
+        "ci_high": 0.43573269233866313,
+        "half_width": 0.030369150282535395,
+        "a": "Double-DQN",
+        "b": "Naive-PPO",
+        "a_score_rate": 0.405,
+        "a_seat0_win_rate": 0.412,
+        "a_seat1_win_rate": 0.398
+      },
+      {
+        "games": 1000,
+        "a_wins": 253,
+        "b_wins": 747,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 132,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 121,
+        "successes": 253,
+        "trials": 1000,
+        "rate": 0.253,
+        "ci_low": 0.22703579958556788,
+        "ci_high": 0.28085461910629633,
+        "half_width": 0.026909409760364225,
+        "a": "CardCounter",
+        "b": "Naive-PPO",
+        "a_score_rate": 0.253,
+        "a_seat0_win_rate": 0.264,
+        "a_seat1_win_rate": 0.242
+      },
+      {
+        "games": 1000,
+        "a_wins": 318,
+        "b_wins": 682,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 154,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 164,
+        "successes": 318,
+        "trials": 1000,
+        "rate": 0.318,
+        "ci_low": 0.2898795107350345,
+        "ci_high": 0.34751342935370755,
+        "half_width": 0.02881695930933653,
+        "a": "Honest",
+        "b": "Naive-PPO",
+        "a_score_rate": 0.318,
+        "a_seat0_win_rate": 0.308,
+        "a_seat1_win_rate": 0.328
+      },
+      {
+        "games": 1000,
+        "a_wins": 332,
+        "b_wins": 668,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 164,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 168,
+        "successes": 332,
+        "trials": 1000,
+        "rate": 0.332,
+        "ci_low": 0.30350363489239063,
+        "ci_high": 0.36178215595875596,
+        "half_width": 0.029139260533182665,
+        "a": "Cautious",
+        "b": "Naive-PPO",
+        "a_score_rate": 0.332,
+        "a_seat0_win_rate": 0.328,
+        "a_seat1_win_rate": 0.336
+      },
+      {
+        "games": 1000,
+        "a_wins": 309,
+        "b_wins": 691,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 156,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 153,
+        "successes": 309,
+        "trials": 1000,
+        "rate": 0.309,
+        "ci_low": 0.28113685771666347,
+        "ci_high": 0.33832496402481854,
+        "half_width": 0.028594053154077537,
+        "a": "Bluffer",
+        "b": "Naive-PPO",
+        "a_score_rate": 0.309,
+        "a_seat0_win_rate": 0.312,
+        "a_seat1_win_rate": 0.306
+      },
+      {
+        "games": 1000,
+        "a_wins": 752,
+        "b_wins": 248,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 384,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 368,
+        "successes": 752,
+        "trials": 1000,
+        "rate": 0.752,
+        "ci_low": 0.7243035580250244,
+        "ci_high": 0.7777677556982557,
+        "half_width": 0.026732098836615648,
+        "a": "Naive-PPO",
+        "b": "Random",
+        "a_score_rate": 0.752,
+        "a_seat0_win_rate": 0.768,
+        "a_seat1_win_rate": 0.736
+      },
+      {
+        "games": 1000,
+        "a_wins": 680,
+        "b_wins": 320,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 345,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 335,
+        "successes": 680,
+        "trials": 1000,
+        "rate": 0.68,
+        "ci_low": 0.6504463759266418,
+        "ci_high": 0.7081759910185584,
+        "half_width": 0.028864807545958326,
+        "a": "Double-DQN",
+        "b": "NFSP",
+        "a_score_rate": 0.68,
+        "a_seat0_win_rate": 0.69,
+        "a_seat1_win_rate": 0.67
+      },
+      {
+        "games": 1000,
+        "a_wins": 480,
+        "b_wins": 520,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 236,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 244,
+        "successes": 480,
+        "trials": 1000,
+        "rate": 0.48,
+        "ci_low": 0.44917079499694124,
+        "ci_high": 0.510982275342481,
+        "half_width": 0.03090574017276987,
+        "a": "CardCounter",
+        "b": "NFSP",
+        "a_score_rate": 0.48,
+        "a_seat0_win_rate": 0.472,
+        "a_seat1_win_rate": 0.488
+      },
+      {
+        "games": 1000,
+        "a_wins": 485,
+        "b_wins": 515,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 244,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 241,
+        "successes": 485,
+        "trials": 1000,
+        "rate": 0.485,
+        "ci_low": 0.4541408702709699,
+        "ci_high": 0.5159739324835967,
+        "half_width": 0.0309165311063134,
+        "a": "Honest",
+        "b": "NFSP",
+        "a_score_rate": 0.485,
+        "a_seat0_win_rate": 0.488,
+        "a_seat1_win_rate": 0.482
+      },
+      {
+        "games": 1000,
+        "a_wins": 536,
+        "b_wins": 464,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 268,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 268,
+        "successes": 536,
+        "trials": 1000,
+        "rate": 0.536,
+        "ci_low": 0.5050118052369239,
+        "ci_high": 0.5667126681521162,
+        "half_width": 0.03085043145759614,
+        "a": "Cautious",
+        "b": "NFSP",
+        "a_score_rate": 0.536,
+        "a_seat0_win_rate": 0.536,
+        "a_seat1_win_rate": 0.536
+      },
+      {
+        "games": 1000,
+        "a_wins": 307,
+        "b_wins": 693,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 147,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 160,
+        "successes": 307,
+        "trials": 1000,
+        "rate": 0.307,
+        "ci_low": 0.27919575142340997,
+        "ci_high": 0.3362813773520143,
+        "half_width": 0.028542812964302167,
+        "a": "Bluffer",
+        "b": "NFSP",
+        "a_score_rate": 0.307,
+        "a_seat0_win_rate": 0.294,
+        "a_seat1_win_rate": 0.32
+      },
+      {
+        "games": 1000,
+        "a_wins": 750,
+        "b_wins": 250,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 380,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 370,
+        "successes": 750,
+        "trials": 1000,
+        "rate": 0.75,
+        "ci_low": 0.7222397197409139,
+        "ci_high": 0.7758469010163086,
+        "half_width": 0.026803590637697328,
+        "a": "NFSP",
+        "b": "Random",
+        "a_score_rate": 0.75,
+        "a_seat0_win_rate": 0.76,
+        "a_seat1_win_rate": 0.74
+      },
+      {
+        "games": 1000,
+        "a_wins": 99,
+        "b_wins": 901,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 48,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 51,
+        "successes": 99,
+        "trials": 1000,
+        "rate": 0.099,
+        "ci_low": 0.08199544136866538,
+        "ci_high": 0.11907361893674984,
+        "half_width": 0.01853908878404223,
+        "a": "CardCounter",
+        "b": "Double-DQN",
+        "a_score_rate": 0.099,
+        "a_seat0_win_rate": 0.096,
+        "a_seat1_win_rate": 0.102
+      },
+      {
+        "games": 1000,
+        "a_wins": 894,
+        "b_wins": 103,
+        "draws": 3,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 446,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 448,
+        "successes": 894,
+        "trials": 1000,
+        "rate": 0.894,
+        "ci_low": 0.8733895811764342,
+        "ci_high": 0.9115949331369485,
+        "half_width": 0.019102675980257167,
+        "a": "Double-DQN",
+        "b": "Honest",
+        "a_score_rate": 0.8955,
+        "a_seat0_win_rate": 0.892,
+        "a_seat1_win_rate": 0.896
+      },
+      {
+        "games": 1000,
+        "a_wins": 187,
+        "b_wins": 812,
+        "draws": 1,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 100,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 87,
+        "successes": 187,
+        "trials": 1000,
+        "rate": 0.187,
+        "ci_low": 0.1640478150490631,
+        "ci_high": 0.21234773576289442,
+        "half_width": 0.024149960356915662,
+        "a": "Cautious",
+        "b": "Double-DQN",
+        "a_score_rate": 0.1875,
+        "a_seat0_win_rate": 0.2,
+        "a_seat1_win_rate": 0.174
+      },
+      {
+        "games": 1000,
+        "a_wins": 265,
+        "b_wins": 735,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 132,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 133,
+        "successes": 265,
+        "trials": 1000,
+        "rate": 0.265,
+        "ci_low": 0.23858325625975632,
+        "ci_high": 0.2932153202284546,
+        "half_width": 0.027316031984349134,
+        "a": "Bluffer",
+        "b": "Double-DQN",
+        "a_score_rate": 0.265,
+        "a_seat0_win_rate": 0.264,
+        "a_seat1_win_rate": 0.266
+      },
+      {
+        "games": 1000,
+        "a_wins": 730,
+        "b_wins": 270,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 360,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 370,
+        "successes": 730,
+        "trials": 1000,
+        "rate": 0.73,
+        "ci_low": 0.7016420587131036,
+        "ci_high": 0.756597632383541,
+        "half_width": 0.02747778683521873,
+        "a": "Double-DQN",
+        "b": "Random",
+        "a_score_rate": 0.73,
+        "a_seat0_win_rate": 0.72,
+        "a_seat1_win_rate": 0.74
+      },
+      {
+        "games": 1000,
+        "a_wins": 431,
+        "b_wins": 492,
+        "draws": 77,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 213,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 218,
+        "successes": 431,
+        "trials": 1000,
+        "rate": 0.431,
+        "ci_low": 0.40062844376747236,
+        "ci_high": 0.46189964890353424,
+        "half_width": 0.03063560256803094,
+        "a": "CardCounter",
+        "b": "Honest",
+        "a_score_rate": 0.4695,
+        "a_seat0_win_rate": 0.426,
+        "a_seat1_win_rate": 0.436
+      },
+      {
+        "games": 1000,
+        "a_wins": 511,
+        "b_wins": 422,
+        "draws": 67,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 259,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 252,
+        "successes": 511,
+        "trials": 1000,
+        "rate": 0.511,
+        "ci_low": 0.4800349634365892,
+        "ci_high": 0.5418808478767286,
+        "half_width": 0.03092294222006972,
+        "a": "CardCounter",
+        "b": "Cautious",
+        "a_score_rate": 0.5445,
+        "a_seat0_win_rate": 0.518,
+        "a_seat1_win_rate": 0.504
+      },
+      {
+        "games": 1000,
+        "a_wins": 70,
+        "b_wins": 930,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 31,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 39,
+        "successes": 70,
+        "trials": 1000,
+        "rate": 0.07,
+        "ci_low": 0.05577636414629404,
+        "ci_high": 0.08751464815128336,
+        "half_width": 0.01586914200249466,
+        "a": "Bluffer",
+        "b": "CardCounter",
+        "a_score_rate": 0.07,
+        "a_seat0_win_rate": 0.062,
+        "a_seat1_win_rate": 0.078
+      },
+      {
+        "games": 1000,
+        "a_wins": 903,
+        "b_wins": 97,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 447,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 456,
+        "successes": 903,
+        "trials": 1000,
+        "rate": 0.903,
+        "ci_low": 0.8830847944509657,
+        "ci_high": 0.9198308382096769,
+        "half_width": 0.018373021879355633,
+        "a": "CardCounter",
+        "b": "Random",
+        "a_score_rate": 0.903,
+        "a_seat0_win_rate": 0.894,
+        "a_seat1_win_rate": 0.912
+      },
+      {
+        "games": 1000,
+        "a_wins": 392,
+        "b_wins": 515,
+        "draws": 93,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 191,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 201,
+        "successes": 392,
+        "trials": 1000,
+        "rate": 0.392,
+        "ci_low": 0.3622102251883648,
+        "ci_high": 0.42261635464451514,
+        "half_width": 0.030203064728075157,
+        "a": "Cautious",
+        "b": "Honest",
+        "a_score_rate": 0.4385,
+        "a_seat0_win_rate": 0.382,
+        "a_seat1_win_rate": 0.402
+      },
+      {
+        "games": 1000,
+        "a_wins": 120,
+        "b_wins": 880,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 61,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 59,
+        "successes": 120,
+        "trials": 1000,
+        "rate": 0.12,
+        "ci_low": 0.10129926060130913,
+        "ci_high": 0.14160907584771276,
+        "half_width": 0.020154907623201816,
+        "a": "Bluffer",
+        "b": "Honest",
+        "a_score_rate": 0.12,
+        "a_seat0_win_rate": 0.122,
+        "a_seat1_win_rate": 0.118
+      },
+      {
+        "games": 1000,
+        "a_wins": 914,
+        "b_wins": 86,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 456,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 458,
+        "successes": 914,
+        "trials": 1000,
+        "rate": 0.914,
+        "ci_low": 0.8949999687497208,
+        "ci_high": 0.9298314752242396,
+        "half_width": 0.017415753237259413,
+        "a": "Honest",
+        "b": "Random",
+        "a_score_rate": 0.914,
+        "a_seat0_win_rate": 0.912,
+        "a_seat1_win_rate": 0.916
+      },
+      {
+        "games": 1000,
+        "a_wins": 43,
+        "b_wins": 957,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 18,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 25,
+        "successes": 43,
+        "trials": 1000,
+        "rate": 0.043,
+        "ci_low": 0.03207865341171336,
+        "ci_high": 0.057419003844084014,
+        "half_width": 0.012670175216185325,
+        "a": "Bluffer",
+        "b": "Cautious",
+        "a_score_rate": 0.043,
+        "a_seat0_win_rate": 0.036,
+        "a_seat1_win_rate": 0.05
+      },
+      {
+        "games": 1000,
+        "a_wins": 932,
+        "b_wins": 68,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 468,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 464,
+        "successes": 932,
+        "trials": 1000,
+        "rate": 0.932,
+        "ci_low": 0.9146861384770105,
+        "ci_high": 0.9460075421914699,
+        "half_width": 0.015660701857229675,
+        "a": "Cautious",
+        "b": "Random",
+        "a_score_rate": 0.932,
+        "a_seat0_win_rate": 0.936,
+        "a_seat1_win_rate": 0.928
+      },
+      {
+        "games": 1000,
+        "a_wins": 527,
+        "b_wins": 473,
+        "draws": 0,
+        "a_seat0_games": 500,
+        "a_seat0_wins": 257,
+        "a_seat1_games": 500,
+        "a_seat1_wins": 270,
+        "successes": 527,
+        "trials": 1000,
+        "rate": 0.527,
+        "ci_low": 0.4960112345098614,
+        "ci_high": 0.5577821205319188,
+        "half_width": 0.03088544301102869,
+        "a": "Bluffer",
+        "b": "Random",
+        "a_score_rate": 0.527,
+        "a_seat0_win_rate": 0.514,
+        "a_seat1_win_rate": 0.54
+      }
+    ],
+    "elo": {
+      "PFSP-PPO": 1399.0106436340468,
+      "Naive-PPO": 1345.7389362646277,
+      "NFSP": 1216.9510315499076,
+      "Double-DQN": 1367.5041440882221,
+      "CardCounter": 1221.1690510062804,
+      "Honest": 1230.6029542858053,
+      "Cautious": 1235.9512246272993,
+      "Bluffer": 1020.8225141819561,
+      "Random": 1000.0
+    },
+    "elo_iterative": {
+      "PFSP-PPO": 1399.3807133164503,
+      "Naive-PPO": 1345.8596458973466,
+      "NFSP": 1217.2211671760322,
+      "Double-DQN": 1367.9206396392042,
+      "CardCounter": 1221.858294103479,
+      "Honest": 1231.253214995496,
+      "Cautious": 1236.5660541486086,
+      "Bluffer": 1020.7176511949086,
+      "Random": 1000.0
+    },
+    "elo_anchor": {
+      "agent": "Random",
+      "rating": 1000.0
+    },
+    "ranking": [
+      {
+        "agent": "PFSP-PPO",
+        "elo": 1399.0106436340468,
+        "elo_iterative": 1399.3807133164503,
+        "win_rate": 0.7053333333333333
+      },
+      {
+        "agent": "Double-DQN",
+        "elo": 1367.5041440882221,
+        "elo_iterative": 1367.9206396392042,
+        "win_rate": 0.6697777777777778
+      },
+      {
+        "agent": "Naive-PPO",
+        "elo": 1345.7389362646277,
+        "elo_iterative": 1345.8596458973466,
+        "win_rate": 0.6445555555555555
+      },
+      {
+        "agent": "Cautious",
+        "elo": 1235.9512246272993,
+        "elo_iterative": 1236.5660541486086,
+        "win_rate": 0.4993333333333334
+      },
+      {
+        "agent": "Honest",
+        "elo": 1230.6029542858053,
+        "elo_iterative": 1231.253214995496,
+        "win_rate": 0.4918888888888888
+      },
+      {
+        "agent": "CardCounter",
+        "elo": 1221.1690510062804,
+        "elo_iterative": 1221.858294103479,
+        "win_rate": 0.4815555555555555
+      },
+      {
+        "agent": "NFSP",
+        "elo": 1216.9510315499076,
+        "elo_iterative": 1217.2211671760322,
+        "win_rate": 0.4842222222222223
+      },
+      {
+        "agent": "Bluffer",
+        "elo": 1020.8225141819561,
+        "elo_iterative": 1020.7176511949086,
+        "win_rate": 0.25822222222222224
+      },
+      {
+        "agent": "Random",
+        "elo": 1000.0,
+        "elo_iterative": 1000.0,
+        "win_rate": 0.23833333333333334
+      }
+    ],
+    "draws": 120
+  },
+  "four_player": {
+    "chance": 0.25,
+    "games_per_table": 1000,
+    "tables": {
+      "3xCardCounter": {
+        "successes": 334,
+        "trials": 1000,
+        "rate": 0.334,
+        "ci_low": 0.3054523188740042,
+        "ci_high": 0.36381816494320013,
+        "half_width": 0.029182923034597963,
+        "games": 1000,
+        "wins": 334,
+        "truncated": 7,
+        "avg_finish_rank": 2.3353474320241694,
+        "ranked_games": 993,
+        "rank_counts": {
+          "1": 334,
+          "2": 211,
+          "3": 229,
+          "4": 219
+        },
+        "win_rate_by_seat": {
+          "0": 0.392,
+          "1": 0.296,
+          "2": 0.284,
+          "3": 0.364
+        }
+      },
+      "3xHonest": {
+        "successes": 417,
+        "trials": 1000,
+        "rate": 0.417,
+        "ci_low": 0.38681470363066783,
+        "ci_high": 0.4478205382779342,
+        "half_width": 0.030502917323633194,
+        "games": 1000,
+        "wins": 417,
+        "truncated": 2,
+        "avg_finish_rank": 1.9579158316633267,
+        "ranked_games": 998,
+        "rank_counts": {
+          "1": 417,
+          "2": 288,
+          "3": 211,
+          "4": 82
+        },
+        "win_rate_by_seat": {
+          "0": 0.432,
+          "1": 0.416,
+          "2": 0.448,
+          "3": 0.372
+        }
+      },
+      "3xCautious": {
+        "successes": 305,
+        "trials": 1000,
+        "rate": 0.305,
+        "ci_low": 0.2772552724809733,
+        "ci_high": 0.3342371633283932,
+        "half_width": 0.028490945423709946,
+        "games": 1000,
+        "wins": 305,
+        "truncated": 10,
+        "avg_finish_rank": 2.28989898989899,
+        "ranked_games": 990,
+        "rank_counts": {
+          "1": 305,
+          "2": 294,
+          "3": 190,
+          "4": 201
+        },
+        "win_rate_by_seat": {
+          "0": 0.3,
+          "1": 0.312,
+          "2": 0.332,
+          "3": 0.276
+        }
+      },
+      "3xBluffer": {
+        "successes": 770,
+        "trials": 1000,
+        "rate": 0.77,
+        "ci_low": 0.7429132441380307,
+        "ci_high": 0.7950203062797695,
+        "half_width": 0.026053531070869385,
+        "games": 1000,
+        "wins": 770,
+        "truncated": 0,
+        "avg_finish_rank": 1.29,
+        "ranked_games": 1000,
+        "rank_counts": {
+          "1": 770,
+          "2": 176,
+          "3": 48,
+          "4": 6
+        },
+        "win_rate_by_seat": {
+          "0": 0.82,
+          "1": 0.74,
+          "2": 0.756,
+          "3": 0.764
+        }
+      },
+      "3xRandom": {
+        "successes": 759,
+        "trials": 1000,
+        "rate": 0.759,
+        "ci_low": 0.7315330470912914,
+        "ci_high": 0.784484692013191,
+        "half_width": 0.026475822460949816,
+        "games": 1000,
+        "wins": 759,
+        "truncated": 0,
+        "avg_finish_rank": 1.334,
+        "ranked_games": 1000,
+        "rank_counts": {
+          "1": 759,
+          "2": 173,
+          "3": 43,
+          "4": 25
+        },
+        "win_rate_by_seat": {
+          "0": 0.764,
+          "1": 0.784,
+          "2": 0.764,
+          "3": 0.724
+        }
+      },
+      "mixed_strong": {
+        "successes": 323,
+        "trials": 1000,
+        "rate": 0.323,
+        "ci_low": 0.2947418927752481,
+        "ci_high": 0.35261277972863847,
+        "half_width": 0.02893544347669519,
+        "games": 1000,
+        "wins": 323,
+        "truncated": 13,
+        "avg_finish_rank": 2.3728470111448834,
+        "ranked_games": 987,
+        "rank_counts": {
+          "1": 323,
+          "2": 219,
+          "3": 199,
+          "4": 246
+        },
+        "win_rate_by_seat": {
+          "0": 0.384,
+          "1": 0.26,
+          "2": 0.328,
+          "3": 0.32
+        }
+      },
+      "mixed_diverse": {
+        "successes": 470,
+        "trials": 1000,
+        "rate": 0.47,
+        "ci_low": 0.43923991460215,
+        "ci_high": 0.5009896909069833,
+        "half_width": 0.030874888152416652,
+        "games": 1000,
+        "wins": 470,
+        "truncated": 0,
+        "avg_finish_rank": 1.67,
+        "ranked_games": 1000,
+        "rank_counts": {
+          "1": 470,
+          "2": 410,
+          "3": 100,
+          "4": 20
+        },
+        "win_rate_by_seat": {
+          "0": 0.464,
+          "1": 0.496,
+          "2": 0.432,
+          "3": 0.488
+        }
+      }
+    },
+    "overall": {
+      "successes": 3378,
+      "trials": 6968,
+      "rate": 0.48478760045924224,
+      "ci_low": 0.47306475767742995,
+      "ci_high": 0.4965272071926575,
+      "half_width": 0.01173122475761379,
+      "games": 7000,
+      "played": 6968,
+      "truncated": 32,
+      "avg_finish_rank": 1.8909299655568312,
+      "win_rate_by_seat": {
+        "0": 0.508,
+        "1": 0.472,
+        "2": 0.4777142857142857,
+        "3": 0.4725714285714286
+      }
+    }
+  },
+  "behaviour": {
+    "PFSP-PPO": {
+      "games": 2000,
+      "claims": 11100,
+      "bluffs": 1997,
+      "bluff_rate": 0.1799099099099099,
+      "claims_by_kind": {
+        "tax_duke": 3156,
+        "assassinate": 352,
+        "steal_captain": 590,
+        "exchange_ambassador": 1480,
+        "block_duke": 1877,
+        "block_contessa": 494,
+        "block_captain": 1211,
+        "block_ambassador": 1940
+      },
+      "bluffs_by_kind": {
+        "tax_duke": 57,
+        "assassinate": 37,
+        "steal_captain": 189,
+        "exchange_ambassador": 641,
+        "block_duke": 144,
+        "block_contessa": 189,
+        "block_captain": 112,
+        "block_ambassador": 628
+      },
+      "bluff_rate_by_kind": {
+        "tax_duke": 0.01806083650190114,
+        "assassinate": 0.10511363636363637,
+        "steal_captain": 0.32033898305084746,
+        "exchange_ambassador": 0.4331081081081081,
+        "block_duke": 0.07671816728822589,
+        "block_contessa": 0.3825910931174089,
+        "block_captain": 0.09248554913294797,
+        "block_ambassador": 0.3237113402061856
+      },
+      "challenge_rate": 0.1457066063092375,
+      "challenge_precision": 0.07961165048543689,
+      "challenges_attempted": 1030,
+      "challenges_won": 82,
+      "challenge_opportunities": 7069,
+      "impossible_claim_challenge_rate": 0.0,
+      "impossible_claim_opportunities": 0,
+      "challenges_on_impossible_claim": 0,
+      "block_rate": 0.6685230024213075,
+      "blocks_attempted": 5522,
+      "block_opportunities": 8260,
+      "block_bluffs": 1073,
+      "claims_proven": 518,
+      "caught_bluffing": 169,
+      "action_distribution": {
+        "INCOME": 126,
+        "FOREIGN_AID": 4782,
+        "COUP": 2284,
+        "TAX": 3156,
+        "ASSASSINATE": 352,
+        "STEAL": 590,
+        "EXCHANGE": 1480,
+        "PASS": 8777,
+        "CHALLENGE": 1030,
+        "BLOCK": 5522,
+        "LOSE_SLOT": 1071,
+        "EXCHANGE_KEEP": 1421
+      },
+      "coin_brackets": {
+        "0-2": {
+          "TAX": 1174,
+          "FOREIGN_AID": 2048,
+          "EXCHANGE": 809,
+          "INCOME": 77,
+          "STEAL": 187
+        },
+        "3-6": {
+          "TAX": 1610,
+          "FOREIGN_AID": 2353,
+          "EXCHANGE": 654,
+          "ASSASSINATE": 336,
+          "STEAL": 395,
+          "INCOME": 46
+        },
+        "7-9": {
+          "TAX": 372,
+          "COUP": 1700,
+          "FOREIGN_AID": 381,
+          "INCOME": 3,
+          "EXCHANGE": 17,
+          "STEAL": 8,
+          "ASSASSINATE": 16
+        },
+        "10+": {
+          "COUP": 584
+        }
+      },
+      "learner": "PFSP-PPO",
+      "num_players": 2,
+      "per_table": {
+        "Honest": {
+          "games": 500,
+          "claims": 3853,
+          "bluffs": 759,
+          "bluff_rate": 0.19698935894108488,
+          "claims_by_kind": {
+            "tax_duke": 999,
+            "assassinate": 88,
+            "steal_captain": 205,
+            "exchange_ambassador": 377,
+            "block_duke": 810,
+            "block_contessa": 132,
+            "block_captain": 480,
+            "block_ambassador": 762
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 17,
+            "assassinate": 7,
+            "steal_captain": 58,
+            "exchange_ambassador": 180,
+            "block_duke": 97,
+            "block_contessa": 61,
+            "block_captain": 43,
+            "block_ambassador": 296
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.01701701701701702,
+            "assassinate": 0.07954545454545454,
+            "steal_captain": 0.28292682926829266,
+            "exchange_ambassador": 0.47745358090185674,
+            "block_duke": 0.11975308641975309,
+            "block_contessa": 0.4621212121212121,
+            "block_captain": 0.08958333333333333,
+            "block_ambassador": 0.3884514435695538
+          },
+          "challenge_rate": 0.09278803869832894,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 211,
+          "challenges_won": 0,
+          "challenge_opportunities": 2274,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.7248589445735147,
+          "blocks_attempted": 2184,
+          "block_opportunities": 3013,
+          "block_bluffs": 497,
+          "claims_proven": 0,
+          "caught_bluffing": 0,
+          "action_distribution": {
+            "INCOME": 17,
+            "FOREIGN_AID": 1433,
+            "COUP": 805,
+            "TAX": 999,
+            "ASSASSINATE": 88,
+            "STEAL": 205,
+            "EXCHANGE": 377,
+            "PASS": 2892,
+            "CHALLENGE": 211,
+            "BLOCK": 2184,
+            "LOSE_SLOT": 246,
+            "EXCHANGE_KEEP": 375
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 353,
+              "FOREIGN_AID": 573,
+              "EXCHANGE": 217,
+              "INCOME": 11,
+              "STEAL": 53
+            },
+            "3-6": {
+              "TAX": 522,
+              "FOREIGN_AID": 724,
+              "EXCHANGE": 158,
+              "ASSASSINATE": 83,
+              "STEAL": 148,
+              "INCOME": 5
+            },
+            "7-9": {
+              "TAX": 124,
+              "COUP": 605,
+              "FOREIGN_AID": 136,
+              "INCOME": 1,
+              "EXCHANGE": 2,
+              "STEAL": 4,
+              "ASSASSINATE": 5
+            },
+            "10+": {
+              "COUP": 200
+            }
+          }
+        },
+        "Cautious": {
+          "games": 500,
+          "claims": 2421,
+          "bluffs": 487,
+          "bluff_rate": 0.20115654688145396,
+          "claims_by_kind": {
+            "tax_duke": 835,
+            "assassinate": 61,
+            "steal_captain": 129,
+            "exchange_ambassador": 389,
+            "block_duke": 0,
+            "block_contessa": 118,
+            "block_captain": 314,
+            "block_ambassador": 575
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 22,
+            "assassinate": 5,
+            "steal_captain": 38,
+            "exchange_ambassador": 194,
+            "block_duke": 0,
+            "block_contessa": 44,
+            "block_captain": 30,
+            "block_ambassador": 154
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.026347305389221556,
+            "assassinate": 0.08196721311475409,
+            "steal_captain": 0.29457364341085274,
+            "exchange_ambassador": 0.4987146529562982,
+            "block_duke": 0.0,
+            "block_contessa": 0.3728813559322034,
+            "block_captain": 0.09554140127388536,
+            "block_ambassador": 0.2678260869565217
+          },
+          "challenge_rate": 0.12798138452588714,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 220,
+          "challenges_won": 0,
+          "challenge_opportunities": 1719,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.7979397781299524,
+          "blocks_attempted": 1007,
+          "block_opportunities": 1262,
+          "block_bluffs": 228,
+          "claims_proven": 133,
+          "caught_bluffing": 60,
+          "action_distribution": {
+            "INCOME": 40,
+            "FOREIGN_AID": 1157,
+            "COUP": 606,
+            "TAX": 835,
+            "ASSASSINATE": 61,
+            "STEAL": 129,
+            "EXCHANGE": 389,
+            "PASS": 1754,
+            "CHALLENGE": 220,
+            "BLOCK": 1007,
+            "LOSE_SLOT": 291,
+            "EXCHANGE_KEEP": 360
+          },
+          "coin_brackets": {
+            "0-2": {
+              "FOREIGN_AID": 504,
+              "TAX": 340,
+              "STEAL": 52,
+              "INCOME": 20,
+              "EXCHANGE": 223
+            },
+            "3-6": {
+              "TAX": 410,
+              "ASSASSINATE": 60,
+              "FOREIGN_AID": 565,
+              "EXCHANGE": 159,
+              "INCOME": 20,
+              "STEAL": 76
+            },
+            "7-9": {
+              "COUP": 473,
+              "TAX": 85,
+              "FOREIGN_AID": 88,
+              "EXCHANGE": 7,
+              "ASSASSINATE": 1,
+              "STEAL": 1
+            },
+            "10+": {
+              "COUP": 133
+            }
+          }
+        },
+        "CardCounter": {
+          "games": 500,
+          "claims": 3434,
+          "bluffs": 502,
+          "bluff_rate": 0.14618520675596972,
+          "claims_by_kind": {
+            "tax_duke": 881,
+            "assassinate": 76,
+            "steal_captain": 131,
+            "exchange_ambassador": 348,
+            "block_duke": 879,
+            "block_contessa": 184,
+            "block_captain": 360,
+            "block_ambassador": 575
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 13,
+            "assassinate": 5,
+            "steal_captain": 40,
+            "exchange_ambassador": 152,
+            "block_duke": 45,
+            "block_contessa": 55,
+            "block_captain": 28,
+            "block_ambassador": 164
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.014755959137343927,
+            "assassinate": 0.06578947368421052,
+            "steal_captain": 0.3053435114503817,
+            "exchange_ambassador": 0.4367816091954023,
+            "block_duke": 0.051194539249146756,
+            "block_contessa": 0.29891304347826086,
+            "block_captain": 0.07777777777777778,
+            "block_ambassador": 0.2852173913043478
+          },
+          "challenge_rate": 0.11047180667433831,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 192,
+          "challenges_won": 0,
+          "challenge_opportunities": 1738,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.6795918367346939,
+          "blocks_attempted": 1998,
+          "block_opportunities": 2940,
+          "block_bluffs": 292,
+          "claims_proven": 54,
+          "caught_bluffing": 39,
+          "action_distribution": {
+            "INCOME": 34,
+            "FOREIGN_AID": 1380,
+            "COUP": 710,
+            "TAX": 881,
+            "ASSASSINATE": 76,
+            "STEAL": 131,
+            "EXCHANGE": 348,
+            "PASS": 2488,
+            "CHALLENGE": 192,
+            "BLOCK": 1998,
+            "LOSE_SLOT": 233,
+            "EXCHANGE_KEEP": 330
+          },
+          "coin_brackets": {
+            "0-2": {
+              "FOREIGN_AID": 553,
+              "TAX": 303,
+              "EXCHANGE": 209,
+              "STEAL": 35,
+              "INCOME": 22
+            },
+            "3-6": {
+              "EXCHANGE": 132,
+              "FOREIGN_AID": 688,
+              "TAX": 477,
+              "ASSASSINATE": 72,
+              "STEAL": 93,
+              "INCOME": 10
+            },
+            "7-9": {
+              "COUP": 526,
+              "TAX": 101,
+              "FOREIGN_AID": 139,
+              "EXCHANGE": 7,
+              "ASSASSINATE": 4,
+              "INCOME": 2,
+              "STEAL": 3
+            },
+            "10+": {
+              "COUP": 184
+            }
+          }
+        },
+        "SelfPlay": {
+          "games": 500,
+          "claims": 1392,
+          "bluffs": 249,
+          "bluff_rate": 0.1788793103448276,
+          "claims_by_kind": {
+            "tax_duke": 441,
+            "assassinate": 127,
+            "steal_captain": 125,
+            "exchange_ambassador": 366,
+            "block_duke": 188,
+            "block_contessa": 60,
+            "block_captain": 57,
+            "block_ambassador": 28
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 5,
+            "assassinate": 20,
+            "steal_captain": 53,
+            "exchange_ambassador": 115,
+            "block_duke": 2,
+            "block_contessa": 29,
+            "block_captain": 11,
+            "block_ambassador": 14
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.011337868480725623,
+            "assassinate": 0.15748031496062992,
+            "steal_captain": 0.424,
+            "exchange_ambassador": 0.31420765027322406,
+            "block_duke": 0.010638297872340425,
+            "block_contessa": 0.48333333333333334,
+            "block_captain": 0.19298245614035087,
+            "block_ambassador": 0.5
+          },
+          "challenge_rate": 0.3041853512705531,
+          "challenge_precision": 0.20147420147420148,
+          "challenges_attempted": 407,
+          "challenges_won": 82,
+          "challenge_opportunities": 1338,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.3186602870813397,
+          "blocks_attempted": 333,
+          "block_opportunities": 1045,
+          "block_bluffs": 56,
+          "claims_proven": 331,
+          "caught_bluffing": 70,
+          "action_distribution": {
+            "INCOME": 35,
+            "FOREIGN_AID": 812,
+            "COUP": 163,
+            "TAX": 441,
+            "ASSASSINATE": 127,
+            "STEAL": 125,
+            "EXCHANGE": 366,
+            "PASS": 1643,
+            "CHALLENGE": 407,
+            "BLOCK": 333,
+            "LOSE_SLOT": 301,
+            "EXCHANGE_KEEP": 356
+          },
+          "coin_brackets": {
+            "0-2": {
+              "FOREIGN_AID": 418,
+              "INCOME": 24,
+              "TAX": 178,
+              "EXCHANGE": 160,
+              "STEAL": 47
+            },
+            "3-6": {
+              "FOREIGN_AID": 376,
+              "EXCHANGE": 205,
+              "TAX": 201,
+              "ASSASSINATE": 121,
+              "STEAL": 78,
+              "INCOME": 11
+            },
+            "7-9": {
+              "TAX": 62,
+              "COUP": 96,
+              "FOREIGN_AID": 18,
+              "ASSASSINATE": 6,
+              "EXCHANGE": 1
+            },
+            "10+": {
+              "COUP": 67
+            }
+          }
+        }
+      },
+      "vs_honest": {
+        "games": 500,
+        "claims": 3853,
+        "bluffs": 759,
+        "bluff_rate": 0.19698935894108488,
+        "claims_by_kind": {
+          "tax_duke": 999,
+          "assassinate": 88,
+          "steal_captain": 205,
+          "exchange_ambassador": 377,
+          "block_duke": 810,
+          "block_contessa": 132,
+          "block_captain": 480,
+          "block_ambassador": 762
+        },
+        "bluffs_by_kind": {
+          "tax_duke": 17,
+          "assassinate": 7,
+          "steal_captain": 58,
+          "exchange_ambassador": 180,
+          "block_duke": 97,
+          "block_contessa": 61,
+          "block_captain": 43,
+          "block_ambassador": 296
+        },
+        "bluff_rate_by_kind": {
+          "tax_duke": 0.01701701701701702,
+          "assassinate": 0.07954545454545454,
+          "steal_captain": 0.28292682926829266,
+          "exchange_ambassador": 0.47745358090185674,
+          "block_duke": 0.11975308641975309,
+          "block_contessa": 0.4621212121212121,
+          "block_captain": 0.08958333333333333,
+          "block_ambassador": 0.3884514435695538
+        },
+        "challenge_rate": 0.09278803869832894,
+        "challenge_precision": 0.0,
+        "challenges_attempted": 211,
+        "challenges_won": 0,
+        "challenge_opportunities": 2274,
+        "impossible_claim_challenge_rate": 0.0,
+        "impossible_claim_opportunities": 0,
+        "challenges_on_impossible_claim": 0,
+        "block_rate": 0.7248589445735147,
+        "blocks_attempted": 2184,
+        "block_opportunities": 3013,
+        "block_bluffs": 497,
+        "claims_proven": 0,
+        "caught_bluffing": 0,
+        "action_distribution": {
+          "INCOME": 17,
+          "FOREIGN_AID": 1433,
+          "COUP": 805,
+          "TAX": 999,
+          "ASSASSINATE": 88,
+          "STEAL": 205,
+          "EXCHANGE": 377,
+          "PASS": 2892,
+          "CHALLENGE": 211,
+          "BLOCK": 2184,
+          "LOSE_SLOT": 246,
+          "EXCHANGE_KEEP": 375
+        },
+        "coin_brackets": {
+          "0-2": {
+            "TAX": 353,
+            "FOREIGN_AID": 573,
+            "EXCHANGE": 217,
+            "INCOME": 11,
+            "STEAL": 53
+          },
+          "3-6": {
+            "TAX": 522,
+            "FOREIGN_AID": 724,
+            "EXCHANGE": 158,
+            "ASSASSINATE": 83,
+            "STEAL": 148,
+            "INCOME": 5
+          },
+          "7-9": {
+            "TAX": 124,
+            "COUP": 605,
+            "FOREIGN_AID": 136,
+            "INCOME": 1,
+            "EXCHANGE": 2,
+            "STEAL": 4,
+            "ASSASSINATE": 5
+          },
+          "10+": {
+            "COUP": 200
+          }
+        }
+      }
+    },
+    "Naive-PPO": {
+      "games": 2000,
+      "claims": 12481,
+      "bluffs": 3585,
+      "bluff_rate": 0.28723659963143977,
+      "claims_by_kind": {
+        "tax_duke": 5676,
+        "assassinate": 286,
+        "steal_captain": 1081,
+        "exchange_ambassador": 1255,
+        "block_duke": 1897,
+        "block_contessa": 225,
+        "block_captain": 659,
+        "block_ambassador": 1402
+      },
+      "bluffs_by_kind": {
+        "tax_duke": 1954,
+        "assassinate": 14,
+        "steal_captain": 269,
+        "exchange_ambassador": 440,
+        "block_duke": 489,
+        "block_contessa": 81,
+        "block_captain": 41,
+        "block_ambassador": 297
+      },
+      "bluff_rate_by_kind": {
+        "tax_duke": 0.3442565186751233,
+        "assassinate": 0.04895104895104895,
+        "steal_captain": 0.2488436632747456,
+        "exchange_ambassador": 0.350597609561753,
+        "block_duke": 0.2577754348972061,
+        "block_contessa": 0.36,
+        "block_captain": 0.0622154779969651,
+        "block_ambassador": 0.21184022824536378
+      },
+      "challenge_rate": 0.12627381479840497,
+      "challenge_precision": 0.1742690058479532,
+      "challenges_attempted": 855,
+      "challenges_won": 149,
+      "challenge_opportunities": 6771,
+      "impossible_claim_challenge_rate": 0.0,
+      "impossible_claim_opportunities": 0,
+      "challenges_on_impossible_claim": 0,
+      "block_rate": 0.6857377049180328,
+      "blocks_attempted": 4183,
+      "block_opportunities": 6100,
+      "block_bluffs": 908,
+      "claims_proven": 373,
+      "caught_bluffing": 310,
+      "action_distribution": {
+        "INCOME": 71,
+        "FOREIGN_AID": 808,
+        "COUP": 2290,
+        "TAX": 5676,
+        "ASSASSINATE": 286,
+        "STEAL": 1081,
+        "EXCHANGE": 1255,
+        "PASS": 7833,
+        "CHALLENGE": 855,
+        "BLOCK": 4183,
+        "LOSE_SLOT": 1145,
+        "EXCHANGE_KEEP": 1164
+      },
+      "coin_brackets": {
+        "0-2": {
+          "TAX": 2583,
+          "EXCHANGE": 1018,
+          "STEAL": 431,
+          "FOREIGN_AID": 376,
+          "INCOME": 30
+        },
+        "3-6": {
+          "TAX": 2670,
+          "INCOME": 41,
+          "EXCHANGE": 229,
+          "STEAL": 592,
+          "FOREIGN_AID": 427,
+          "ASSASSINATE": 272
+        },
+        "7-9": {
+          "TAX": 423,
+          "ASSASSINATE": 14,
+          "COUP": 1851,
+          "STEAL": 58,
+          "FOREIGN_AID": 5,
+          "EXCHANGE": 8
+        },
+        "10+": {
+          "COUP": 439
+        }
+      },
+      "learner": "Naive-PPO",
+      "num_players": 2,
+      "per_table": {
+        "Honest": {
+          "games": 500,
+          "claims": 4075,
+          "bluffs": 1248,
+          "bluff_rate": 0.30625766871165644,
+          "claims_by_kind": {
+            "tax_duke": 1724,
+            "assassinate": 78,
+            "steal_captain": 296,
+            "exchange_ambassador": 371,
+            "block_duke": 789,
+            "block_contessa": 67,
+            "block_captain": 217,
+            "block_ambassador": 533
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 614,
+            "assassinate": 3,
+            "steal_captain": 98,
+            "exchange_ambassador": 136,
+            "block_duke": 224,
+            "block_contessa": 24,
+            "block_captain": 22,
+            "block_ambassador": 127
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.3561484918793503,
+            "assassinate": 0.038461538461538464,
+            "steal_captain": 0.3310810810810811,
+            "exchange_ambassador": 0.3665768194070081,
+            "block_duke": 0.28390367553865653,
+            "block_contessa": 0.3582089552238806,
+            "block_captain": 0.10138248847926268,
+            "block_ambassador": 0.23827392120075047
+          },
+          "challenge_rate": 0.11261261261261261,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 225,
+          "challenges_won": 0,
+          "challenge_opportunities": 1998,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.7025371828521435,
+          "blocks_attempted": 1606,
+          "block_opportunities": 2286,
+          "block_bluffs": 397,
+          "claims_proven": 0,
+          "caught_bluffing": 0,
+          "action_distribution": {
+            "INCOME": 16,
+            "FOREIGN_AID": 206,
+            "COUP": 728,
+            "TAX": 1724,
+            "ASSASSINATE": 78,
+            "STEAL": 296,
+            "EXCHANGE": 371,
+            "PASS": 2453,
+            "CHALLENGE": 225,
+            "BLOCK": 1606,
+            "LOSE_SLOT": 281,
+            "EXCHANGE_KEEP": 370
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 754,
+              "EXCHANGE": 300,
+              "STEAL": 96,
+              "FOREIGN_AID": 108,
+              "INCOME": 6
+            },
+            "3-6": {
+              "TAX": 838,
+              "INCOME": 10,
+              "EXCHANGE": 71,
+              "STEAL": 182,
+              "FOREIGN_AID": 97,
+              "ASSASSINATE": 71
+            },
+            "7-9": {
+              "TAX": 132,
+              "ASSASSINATE": 7,
+              "COUP": 592,
+              "STEAL": 18,
+              "FOREIGN_AID": 1
+            },
+            "10+": {
+              "COUP": 136
+            }
+          }
+        },
+        "Cautious": {
+          "games": 500,
+          "claims": 2740,
+          "bluffs": 742,
+          "bluff_rate": 0.2708029197080292,
+          "claims_by_kind": {
+            "tax_duke": 1449,
+            "assassinate": 54,
+            "steal_captain": 252,
+            "exchange_ambassador": 315,
+            "block_duke": 0,
+            "block_contessa": 73,
+            "block_captain": 192,
+            "block_ambassador": 405
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 449,
+            "assassinate": 7,
+            "steal_captain": 54,
+            "exchange_ambassador": 115,
+            "block_duke": 0,
+            "block_contessa": 29,
+            "block_captain": 9,
+            "block_ambassador": 79
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.30986887508626637,
+            "assassinate": 0.12962962962962962,
+            "steal_captain": 0.21428571428571427,
+            "exchange_ambassador": 0.36507936507936506,
+            "block_duke": 0.0,
+            "block_contessa": 0.3972602739726027,
+            "block_captain": 0.046875,
+            "block_ambassador": 0.19506172839506172
+          },
+          "challenge_rate": 0.08575031525851198,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 136,
+          "challenges_won": 0,
+          "challenge_opportunities": 1586,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.6706706706706707,
+          "blocks_attempted": 670,
+          "block_opportunities": 999,
+          "block_bluffs": 117,
+          "claims_proven": 117,
+          "caught_bluffing": 106,
+          "action_distribution": {
+            "INCOME": 19,
+            "FOREIGN_AID": 274,
+            "COUP": 626,
+            "TAX": 1449,
+            "ASSASSINATE": 54,
+            "STEAL": 252,
+            "EXCHANGE": 315,
+            "PASS": 1779,
+            "CHALLENGE": 136,
+            "BLOCK": 670,
+            "LOSE_SLOT": 313,
+            "EXCHANGE_KEEP": 284
+          },
+          "coin_brackets": {
+            "0-2": {
+              "STEAL": 97,
+              "EXCHANGE": 267,
+              "TAX": 682,
+              "FOREIGN_AID": 113,
+              "INCOME": 8
+            },
+            "3-6": {
+              "TAX": 688,
+              "STEAL": 146,
+              "EXCHANGE": 41,
+              "FOREIGN_AID": 161,
+              "ASSASSINATE": 53,
+              "INCOME": 11
+            },
+            "7-9": {
+              "COUP": 543,
+              "TAX": 79,
+              "EXCHANGE": 7,
+              "STEAL": 9,
+              "ASSASSINATE": 1
+            },
+            "10+": {
+              "COUP": 83
+            }
+          }
+        },
+        "CardCounter": {
+          "games": 500,
+          "claims": 4009,
+          "bluffs": 1026,
+          "bluff_rate": 0.2559241706161137,
+          "claims_by_kind": {
+            "tax_duke": 1694,
+            "assassinate": 85,
+            "steal_captain": 247,
+            "exchange_ambassador": 302,
+            "block_duke": 1047,
+            "block_contessa": 59,
+            "block_captain": 191,
+            "block_ambassador": 384
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 545,
+            "assassinate": 3,
+            "steal_captain": 41,
+            "exchange_ambassador": 98,
+            "block_duke": 236,
+            "block_contessa": 18,
+            "block_captain": 8,
+            "block_ambassador": 77
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.3217237308146399,
+            "assassinate": 0.03529411764705882,
+            "steal_captain": 0.1659919028340081,
+            "exchange_ambassador": 0.32450331125827814,
+            "block_duke": 0.22540592168099333,
+            "block_contessa": 0.3050847457627119,
+            "block_captain": 0.041884816753926704,
+            "block_ambassador": 0.20052083333333334
+          },
+          "challenge_rate": 0.08448844884488449,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 128,
+          "challenges_won": 0,
+          "challenge_opportunities": 1515,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.7147108843537415,
+          "blocks_attempted": 1681,
+          "block_opportunities": 2352,
+          "block_bluffs": 339,
+          "claims_proven": 56,
+          "caught_bluffing": 57,
+          "action_distribution": {
+            "INCOME": 18,
+            "FOREIGN_AID": 160,
+            "COUP": 710,
+            "TAX": 1694,
+            "ASSASSINATE": 85,
+            "STEAL": 247,
+            "EXCHANGE": 302,
+            "PASS": 2058,
+            "CHALLENGE": 128,
+            "BLOCK": 1681,
+            "LOSE_SLOT": 234,
+            "EXCHANGE_KEEP": 280
+          },
+          "coin_brackets": {
+            "0-2": {
+              "EXCHANGE": 239,
+              "TAX": 734,
+              "STEAL": 92,
+              "FOREIGN_AID": 71,
+              "INCOME": 8
+            },
+            "3-6": {
+              "TAX": 840,
+              "ASSASSINATE": 82,
+              "INCOME": 10,
+              "FOREIGN_AID": 85,
+              "STEAL": 135,
+              "EXCHANGE": 63
+            },
+            "7-9": {
+              "COUP": 577,
+              "TAX": 120,
+              "STEAL": 20,
+              "FOREIGN_AID": 4,
+              "ASSASSINATE": 3
+            },
+            "10+": {
+              "COUP": 133
+            }
+          }
+        },
+        "SelfPlay": {
+          "games": 500,
+          "claims": 1657,
+          "bluffs": 569,
+          "bluff_rate": 0.34339167169583584,
+          "claims_by_kind": {
+            "tax_duke": 809,
+            "assassinate": 69,
+            "steal_captain": 286,
+            "exchange_ambassador": 267,
+            "block_duke": 61,
+            "block_contessa": 26,
+            "block_captain": 59,
+            "block_ambassador": 80
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 346,
+            "assassinate": 1,
+            "steal_captain": 76,
+            "exchange_ambassador": 91,
+            "block_duke": 29,
+            "block_contessa": 10,
+            "block_captain": 2,
+            "block_ambassador": 14
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.4276885043263288,
+            "assassinate": 0.014492753623188406,
+            "steal_captain": 0.26573426573426573,
+            "exchange_ambassador": 0.3408239700374532,
+            "block_duke": 0.47540983606557374,
+            "block_contessa": 0.38461538461538464,
+            "block_captain": 0.03389830508474576,
+            "block_ambassador": 0.175
+          },
+          "challenge_rate": 0.21889952153110048,
+          "challenge_precision": 0.40710382513661203,
+          "challenges_attempted": 366,
+          "challenges_won": 149,
+          "challenge_opportunities": 1672,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.48812095032397407,
+          "blocks_attempted": 226,
+          "block_opportunities": 463,
+          "block_bluffs": 55,
+          "claims_proven": 200,
+          "caught_bluffing": 147,
+          "action_distribution": {
+            "INCOME": 18,
+            "FOREIGN_AID": 168,
+            "COUP": 226,
+            "TAX": 809,
+            "ASSASSINATE": 69,
+            "STEAL": 286,
+            "EXCHANGE": 267,
+            "PASS": 1543,
+            "CHALLENGE": 366,
+            "BLOCK": 226,
+            "LOSE_SLOT": 317,
+            "EXCHANGE_KEEP": 230
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 413,
+              "STEAL": 146,
+              "EXCHANGE": 212,
+              "FOREIGN_AID": 84,
+              "INCOME": 8
+            },
+            "3-6": {
+              "TAX": 304,
+              "STEAL": 129,
+              "ASSASSINATE": 66,
+              "FOREIGN_AID": 84,
+              "INCOME": 10,
+              "EXCHANGE": 54
+            },
+            "7-9": {
+              "TAX": 92,
+              "COUP": 139,
+              "STEAL": 11,
+              "ASSASSINATE": 3,
+              "EXCHANGE": 1
+            },
+            "10+": {
+              "COUP": 87
+            }
+          }
+        }
+      },
+      "vs_honest": {
+        "games": 500,
+        "claims": 4075,
+        "bluffs": 1248,
+        "bluff_rate": 0.30625766871165644,
+        "claims_by_kind": {
+          "tax_duke": 1724,
+          "assassinate": 78,
+          "steal_captain": 296,
+          "exchange_ambassador": 371,
+          "block_duke": 789,
+          "block_contessa": 67,
+          "block_captain": 217,
+          "block_ambassador": 533
+        },
+        "bluffs_by_kind": {
+          "tax_duke": 614,
+          "assassinate": 3,
+          "steal_captain": 98,
+          "exchange_ambassador": 136,
+          "block_duke": 224,
+          "block_contessa": 24,
+          "block_captain": 22,
+          "block_ambassador": 127
+        },
+        "bluff_rate_by_kind": {
+          "tax_duke": 0.3561484918793503,
+          "assassinate": 0.038461538461538464,
+          "steal_captain": 0.3310810810810811,
+          "exchange_ambassador": 0.3665768194070081,
+          "block_duke": 0.28390367553865653,
+          "block_contessa": 0.3582089552238806,
+          "block_captain": 0.10138248847926268,
+          "block_ambassador": 0.23827392120075047
+        },
+        "challenge_rate": 0.11261261261261261,
+        "challenge_precision": 0.0,
+        "challenges_attempted": 225,
+        "challenges_won": 0,
+        "challenge_opportunities": 1998,
+        "impossible_claim_challenge_rate": 0.0,
+        "impossible_claim_opportunities": 0,
+        "challenges_on_impossible_claim": 0,
+        "block_rate": 0.7025371828521435,
+        "blocks_attempted": 1606,
+        "block_opportunities": 2286,
+        "block_bluffs": 397,
+        "claims_proven": 0,
+        "caught_bluffing": 0,
+        "action_distribution": {
+          "INCOME": 16,
+          "FOREIGN_AID": 206,
+          "COUP": 728,
+          "TAX": 1724,
+          "ASSASSINATE": 78,
+          "STEAL": 296,
+          "EXCHANGE": 371,
+          "PASS": 2453,
+          "CHALLENGE": 225,
+          "BLOCK": 1606,
+          "LOSE_SLOT": 281,
+          "EXCHANGE_KEEP": 370
+        },
+        "coin_brackets": {
+          "0-2": {
+            "TAX": 754,
+            "EXCHANGE": 300,
+            "STEAL": 96,
+            "FOREIGN_AID": 108,
+            "INCOME": 6
+          },
+          "3-6": {
+            "TAX": 838,
+            "INCOME": 10,
+            "EXCHANGE": 71,
+            "STEAL": 182,
+            "FOREIGN_AID": 97,
+            "ASSASSINATE": 71
+          },
+          "7-9": {
+            "TAX": 132,
+            "ASSASSINATE": 7,
+            "COUP": 592,
+            "STEAL": 18,
+            "FOREIGN_AID": 1
+          },
+          "10+": {
+            "COUP": 136
+          }
+        }
+      }
+    },
+    "NFSP": {
+      "games": 2000,
+      "claims": 13256,
+      "bluffs": 4445,
+      "bluff_rate": 0.33531985515992757,
+      "claims_by_kind": {
+        "tax_duke": 3592,
+        "assassinate": 854,
+        "steal_captain": 2598,
+        "exchange_ambassador": 1625,
+        "block_duke": 1899,
+        "block_contessa": 339,
+        "block_captain": 1177,
+        "block_ambassador": 1172
+      },
+      "bluffs_by_kind": {
+        "tax_duke": 1169,
+        "assassinate": 285,
+        "steal_captain": 649,
+        "exchange_ambassador": 633,
+        "block_duke": 700,
+        "block_contessa": 169,
+        "block_captain": 466,
+        "block_ambassador": 374
+      },
+      "bluff_rate_by_kind": {
+        "tax_duke": 0.32544543429844097,
+        "assassinate": 0.3337236533957845,
+        "steal_captain": 0.2498075442648191,
+        "exchange_ambassador": 0.38953846153846156,
+        "block_duke": 0.36861506055818855,
+        "block_contessa": 0.49852507374631266,
+        "block_captain": 0.3959218351741716,
+        "block_ambassador": 0.3191126279863481
+      },
+      "challenge_rate": 0.11309784993418166,
+      "challenge_precision": 0.1716779825412221,
+      "challenges_attempted": 1031,
+      "challenges_won": 177,
+      "challenge_opportunities": 9116,
+      "impossible_claim_challenge_rate": 0.5,
+      "impossible_claim_opportunities": 4,
+      "challenges_on_impossible_claim": 2,
+      "block_rate": 0.6410901467505241,
+      "blocks_attempted": 4587,
+      "block_opportunities": 7155,
+      "block_bluffs": 1709,
+      "claims_proven": 370,
+      "caught_bluffing": 486,
+      "action_distribution": {
+        "INCOME": 1800,
+        "FOREIGN_AID": 2024,
+        "COUP": 1535,
+        "TAX": 3592,
+        "ASSASSINATE": 854,
+        "STEAL": 2598,
+        "EXCHANGE": 1625,
+        "PASS": 10653,
+        "CHALLENGE": 1031,
+        "BLOCK": 4587,
+        "LOSE_SLOT": 1345,
+        "EXCHANGE_KEEP": 1542
+      },
+      "coin_brackets": {
+        "0-2": {
+          "TAX": 1414,
+          "INCOME": 1010,
+          "STEAL": 997,
+          "EXCHANGE": 844,
+          "FOREIGN_AID": 811
+        },
+        "3-6": {
+          "TAX": 1636,
+          "EXCHANGE": 616,
+          "ASSASSINATE": 754,
+          "INCOME": 525,
+          "FOREIGN_AID": 910,
+          "STEAL": 1259
+        },
+        "7-9": {
+          "EXCHANGE": 165,
+          "ASSASSINATE": 100,
+          "COUP": 653,
+          "TAX": 542,
+          "INCOME": 265,
+          "STEAL": 342,
+          "FOREIGN_AID": 303
+        },
+        "10+": {
+          "COUP": 882
+        }
+      },
+      "learner": "NFSP",
+      "num_players": 2,
+      "per_table": {
+        "Honest": {
+          "games": 500,
+          "claims": 4141,
+          "bluffs": 1467,
+          "bluff_rate": 0.35426225549384205,
+          "claims_by_kind": {
+            "tax_duke": 1031,
+            "assassinate": 252,
+            "steal_captain": 745,
+            "exchange_ambassador": 492,
+            "block_duke": 800,
+            "block_contessa": 62,
+            "block_captain": 343,
+            "block_ambassador": 416
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 325,
+            "assassinate": 85,
+            "steal_captain": 224,
+            "exchange_ambassador": 194,
+            "block_duke": 282,
+            "block_contessa": 35,
+            "block_captain": 187,
+            "block_ambassador": 135
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.31522793404461685,
+            "assassinate": 0.3373015873015873,
+            "steal_captain": 0.3006711409395973,
+            "exchange_ambassador": 0.3943089430894309,
+            "block_duke": 0.3525,
+            "block_contessa": 0.5645161290322581,
+            "block_captain": 0.5451895043731778,
+            "block_ambassador": 0.3245192307692308
+          },
+          "challenge_rate": 0.09636711281070745,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 252,
+          "challenges_won": 0,
+          "challenge_opportunities": 2615,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.6351880877742947,
+          "blocks_attempted": 1621,
+          "block_opportunities": 2552,
+          "block_bluffs": 639,
+          "claims_proven": 0,
+          "caught_bluffing": 1,
+          "action_distribution": {
+            "INCOME": 412,
+            "FOREIGN_AID": 635,
+            "COUP": 507,
+            "TAX": 1031,
+            "ASSASSINATE": 252,
+            "STEAL": 745,
+            "EXCHANGE": 492,
+            "PASS": 3294,
+            "CHALLENGE": 252,
+            "BLOCK": 1621,
+            "LOSE_SLOT": 331,
+            "EXCHANGE_KEEP": 488
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 379,
+              "INCOME": 218,
+              "STEAL": 260,
+              "EXCHANGE": 257,
+              "FOREIGN_AID": 241
+            },
+            "3-6": {
+              "TAX": 477,
+              "EXCHANGE": 177,
+              "ASSASSINATE": 221,
+              "INCOME": 125,
+              "FOREIGN_AID": 281,
+              "STEAL": 379
+            },
+            "7-9": {
+              "EXCHANGE": 58,
+              "ASSASSINATE": 31,
+              "COUP": 197,
+              "TAX": 175,
+              "INCOME": 69,
+              "STEAL": 106,
+              "FOREIGN_AID": 113
+            },
+            "10+": {
+              "COUP": 310
+            }
+          }
+        },
+        "Cautious": {
+          "games": 500,
+          "claims": 2851,
+          "bluffs": 903,
+          "bluff_rate": 0.31673097158891617,
+          "claims_by_kind": {
+            "tax_duke": 849,
+            "assassinate": 185,
+            "steal_captain": 738,
+            "exchange_ambassador": 359,
+            "block_duke": 0,
+            "block_contessa": 99,
+            "block_captain": 303,
+            "block_ambassador": 318
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 291,
+            "assassinate": 58,
+            "steal_captain": 146,
+            "exchange_ambassador": 136,
+            "block_duke": 0,
+            "block_contessa": 45,
+            "block_captain": 116,
+            "block_ambassador": 111
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.34275618374558303,
+            "assassinate": 0.31351351351351353,
+            "steal_captain": 0.1978319783197832,
+            "exchange_ambassador": 0.3788300835654596,
+            "block_duke": 0.0,
+            "block_contessa": 0.45454545454545453,
+            "block_captain": 0.38283828382838286,
+            "block_ambassador": 0.3490566037735849
+          },
+          "challenge_rate": 0.1042490118577075,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 211,
+          "challenges_won": 0,
+          "challenge_opportunities": 2024,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.729483282674772,
+          "blocks_attempted": 720,
+          "block_opportunities": 987,
+          "block_bluffs": 272,
+          "claims_proven": 104,
+          "caught_bluffing": 182,
+          "action_distribution": {
+            "INCOME": 478,
+            "FOREIGN_AID": 437,
+            "COUP": 385,
+            "TAX": 849,
+            "ASSASSINATE": 185,
+            "STEAL": 738,
+            "EXCHANGE": 359,
+            "PASS": 2080,
+            "CHALLENGE": 211,
+            "BLOCK": 720,
+            "LOSE_SLOT": 356,
+            "EXCHANGE_KEEP": 331
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 349,
+              "EXCHANGE": 188,
+              "FOREIGN_AID": 173,
+              "INCOME": 248,
+              "STEAL": 251
+            },
+            "3-6": {
+              "ASSASSINATE": 159,
+              "STEAL": 353,
+              "TAX": 377,
+              "FOREIGN_AID": 201,
+              "INCOME": 143,
+              "EXCHANGE": 135
+            },
+            "7-9": {
+              "COUP": 166,
+              "FOREIGN_AID": 63,
+              "TAX": 123,
+              "INCOME": 87,
+              "STEAL": 134,
+              "ASSASSINATE": 26,
+              "EXCHANGE": 36
+            },
+            "10+": {
+              "COUP": 219
+            }
+          }
+        },
+        "CardCounter": {
+          "games": 500,
+          "claims": 3844,
+          "bluffs": 1233,
+          "bluff_rate": 0.3207596253902185,
+          "claims_by_kind": {
+            "tax_duke": 956,
+            "assassinate": 214,
+            "steal_captain": 622,
+            "exchange_ambassador": 380,
+            "block_duke": 929,
+            "block_contessa": 68,
+            "block_captain": 364,
+            "block_ambassador": 311
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 303,
+            "assassinate": 79,
+            "steal_captain": 153,
+            "exchange_ambassador": 150,
+            "block_duke": 341,
+            "block_contessa": 31,
+            "block_captain": 99,
+            "block_ambassador": 77
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.3169456066945607,
+            "assassinate": 0.3691588785046729,
+            "steal_captain": 0.2459807073954984,
+            "exchange_ambassador": 0.39473684210526316,
+            "block_duke": 0.36706135629709363,
+            "block_contessa": 0.45588235294117646,
+            "block_captain": 0.27197802197802196,
+            "block_ambassador": 0.24758842443729903
+          },
+          "challenge_rate": 0.10684798445847499,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 220,
+          "challenges_won": 0,
+          "challenge_opportunities": 2059,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.653635652853792,
+          "blocks_attempted": 1672,
+          "block_opportunities": 2558,
+          "block_bluffs": 548,
+          "claims_proven": 73,
+          "caught_bluffing": 119,
+          "action_distribution": {
+            "INCOME": 468,
+            "FOREIGN_AID": 534,
+            "COUP": 422,
+            "TAX": 956,
+            "ASSASSINATE": 214,
+            "STEAL": 622,
+            "EXCHANGE": 380,
+            "PASS": 2725,
+            "CHALLENGE": 220,
+            "BLOCK": 1672,
+            "LOSE_SLOT": 332,
+            "EXCHANGE_KEEP": 364
+          },
+          "coin_brackets": {
+            "0-2": {
+              "FOREIGN_AID": 201,
+              "TAX": 345,
+              "STEAL": 205,
+              "INCOME": 255,
+              "EXCHANGE": 186
+            },
+            "3-6": {
+              "ASSASSINATE": 191,
+              "FOREIGN_AID": 241,
+              "TAX": 440,
+              "EXCHANGE": 147,
+              "STEAL": 345,
+              "INCOME": 134
+            },
+            "7-9": {
+              "FOREIGN_AID": 92,
+              "STEAL": 72,
+              "INCOME": 79,
+              "TAX": 171,
+              "COUP": 152,
+              "EXCHANGE": 47,
+              "ASSASSINATE": 23
+            },
+            "10+": {
+              "COUP": 270
+            }
+          }
+        },
+        "SelfPlay": {
+          "games": 500,
+          "claims": 2420,
+          "bluffs": 842,
+          "bluff_rate": 0.34793388429752065,
+          "claims_by_kind": {
+            "tax_duke": 756,
+            "assassinate": 203,
+            "steal_captain": 493,
+            "exchange_ambassador": 394,
+            "block_duke": 170,
+            "block_contessa": 110,
+            "block_captain": 167,
+            "block_ambassador": 127
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 250,
+            "assassinate": 63,
+            "steal_captain": 126,
+            "exchange_ambassador": 153,
+            "block_duke": 77,
+            "block_contessa": 58,
+            "block_captain": 64,
+            "block_ambassador": 51
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.3306878306878307,
+            "assassinate": 0.3103448275862069,
+            "steal_captain": 0.25557809330628806,
+            "exchange_ambassador": 0.3883248730964467,
+            "block_duke": 0.45294117647058824,
+            "block_contessa": 0.5272727272727272,
+            "block_captain": 0.38323353293413176,
+            "block_ambassador": 0.4015748031496063
+          },
+          "challenge_rate": 0.14392059553349876,
+          "challenge_precision": 0.5086206896551724,
+          "challenges_attempted": 348,
+          "challenges_won": 177,
+          "challenge_opportunities": 2418,
+          "impossible_claim_challenge_rate": 0.5,
+          "impossible_claim_opportunities": 4,
+          "challenges_on_impossible_claim": 2,
+          "block_rate": 0.5425330812854442,
+          "blocks_attempted": 574,
+          "block_opportunities": 1058,
+          "block_bluffs": 250,
+          "claims_proven": 193,
+          "caught_bluffing": 184,
+          "action_distribution": {
+            "INCOME": 442,
+            "FOREIGN_AID": 418,
+            "COUP": 221,
+            "TAX": 756,
+            "ASSASSINATE": 203,
+            "STEAL": 493,
+            "EXCHANGE": 394,
+            "PASS": 2554,
+            "CHALLENGE": 348,
+            "BLOCK": 574,
+            "LOSE_SLOT": 326,
+            "EXCHANGE_KEEP": 359
+          },
+          "coin_brackets": {
+            "0-2": {
+              "STEAL": 281,
+              "FOREIGN_AID": 196,
+              "EXCHANGE": 213,
+              "INCOME": 289,
+              "TAX": 341
+            },
+            "3-6": {
+              "STEAL": 182,
+              "FOREIGN_AID": 187,
+              "INCOME": 123,
+              "ASSASSINATE": 183,
+              "EXCHANGE": 157,
+              "TAX": 342
+            },
+            "7-9": {
+              "TAX": 73,
+              "COUP": 138,
+              "STEAL": 30,
+              "ASSASSINATE": 20,
+              "INCOME": 30,
+              "EXCHANGE": 24,
+              "FOREIGN_AID": 35
+            },
+            "10+": {
+              "COUP": 83
+            }
+          }
+        }
+      },
+      "vs_honest": {
+        "games": 500,
+        "claims": 4141,
+        "bluffs": 1467,
+        "bluff_rate": 0.35426225549384205,
+        "claims_by_kind": {
+          "tax_duke": 1031,
+          "assassinate": 252,
+          "steal_captain": 745,
+          "exchange_ambassador": 492,
+          "block_duke": 800,
+          "block_contessa": 62,
+          "block_captain": 343,
+          "block_ambassador": 416
+        },
+        "bluffs_by_kind": {
+          "tax_duke": 325,
+          "assassinate": 85,
+          "steal_captain": 224,
+          "exchange_ambassador": 194,
+          "block_duke": 282,
+          "block_contessa": 35,
+          "block_captain": 187,
+          "block_ambassador": 135
+        },
+        "bluff_rate_by_kind": {
+          "tax_duke": 0.31522793404461685,
+          "assassinate": 0.3373015873015873,
+          "steal_captain": 0.3006711409395973,
+          "exchange_ambassador": 0.3943089430894309,
+          "block_duke": 0.3525,
+          "block_contessa": 0.5645161290322581,
+          "block_captain": 0.5451895043731778,
+          "block_ambassador": 0.3245192307692308
+        },
+        "challenge_rate": 0.09636711281070745,
+        "challenge_precision": 0.0,
+        "challenges_attempted": 252,
+        "challenges_won": 0,
+        "challenge_opportunities": 2615,
+        "impossible_claim_challenge_rate": 0.0,
+        "impossible_claim_opportunities": 0,
+        "challenges_on_impossible_claim": 0,
+        "block_rate": 0.6351880877742947,
+        "blocks_attempted": 1621,
+        "block_opportunities": 2552,
+        "block_bluffs": 639,
+        "claims_proven": 0,
+        "caught_bluffing": 1,
+        "action_distribution": {
+          "INCOME": 412,
+          "FOREIGN_AID": 635,
+          "COUP": 507,
+          "TAX": 1031,
+          "ASSASSINATE": 252,
+          "STEAL": 745,
+          "EXCHANGE": 492,
+          "PASS": 3294,
+          "CHALLENGE": 252,
+          "BLOCK": 1621,
+          "LOSE_SLOT": 331,
+          "EXCHANGE_KEEP": 488
+        },
+        "coin_brackets": {
+          "0-2": {
+            "TAX": 379,
+            "INCOME": 218,
+            "STEAL": 260,
+            "EXCHANGE": 257,
+            "FOREIGN_AID": 241
+          },
+          "3-6": {
+            "TAX": 477,
+            "EXCHANGE": 177,
+            "ASSASSINATE": 221,
+            "INCOME": 125,
+            "FOREIGN_AID": 281,
+            "STEAL": 379
+          },
+          "7-9": {
+            "EXCHANGE": 58,
+            "ASSASSINATE": 31,
+            "COUP": 197,
+            "TAX": 175,
+            "INCOME": 69,
+            "STEAL": 106,
+            "FOREIGN_AID": 113
+          },
+          "10+": {
+            "COUP": 310
+          }
+        }
+      }
+    },
+    "Double-DQN": {
+      "games": 2000,
+      "claims": 14895,
+      "bluffs": 6828,
+      "bluff_rate": 0.4584088620342397,
+      "claims_by_kind": {
+        "tax_duke": 5310,
+        "assassinate": 344,
+        "steal_captain": 1910,
+        "exchange_ambassador": 1112,
+        "block_duke": 3237,
+        "block_contessa": 162,
+        "block_captain": 1325,
+        "block_ambassador": 1495
+      },
+      "bluffs_by_kind": {
+        "tax_duke": 2519,
+        "assassinate": 96,
+        "steal_captain": 949,
+        "exchange_ambassador": 411,
+        "block_duke": 1503,
+        "block_contessa": 99,
+        "block_captain": 599,
+        "block_ambassador": 652
+      },
+      "bluff_rate_by_kind": {
+        "tax_duke": 0.4743879472693032,
+        "assassinate": 0.27906976744186046,
+        "steal_captain": 0.4968586387434555,
+        "exchange_ambassador": 0.36960431654676257,
+        "block_duke": 0.4643188137164041,
+        "block_contessa": 0.6111111111111112,
+        "block_captain": 0.4520754716981132,
+        "block_ambassador": 0.4361204013377926
+      },
+      "challenge_rate": 0.06499670402109427,
+      "challenge_precision": 0.34279918864097364,
+      "challenges_attempted": 493,
+      "challenges_won": 169,
+      "challenge_opportunities": 7585,
+      "impossible_claim_challenge_rate": 0.0,
+      "impossible_claim_opportunities": 0,
+      "challenges_on_impossible_claim": 0,
+      "block_rate": 0.8952065639844538,
+      "blocks_attempted": 6219,
+      "block_opportunities": 6947,
+      "block_bluffs": 2853,
+      "claims_proven": 221,
+      "caught_bluffing": 330,
+      "action_distribution": {
+        "INCOME": 642,
+        "FOREIGN_AID": 1746,
+        "COUP": 2770,
+        "TAX": 5310,
+        "ASSASSINATE": 344,
+        "STEAL": 1910,
+        "EXCHANGE": 1112,
+        "PASS": 7820,
+        "CHALLENGE": 493,
+        "BLOCK": 6219,
+        "LOSE_SLOT": 924,
+        "EXCHANGE_KEEP": 1074
+      },
+      "coin_brackets": {
+        "0-2": {
+          "TAX": 2582,
+          "EXCHANGE": 714,
+          "FOREIGN_AID": 551,
+          "STEAL": 872,
+          "INCOME": 147
+        },
+        "3-6": {
+          "TAX": 2434,
+          "FOREIGN_AID": 1017,
+          "EXCHANGE": 275,
+          "ASSASSINATE": 322,
+          "INCOME": 316,
+          "STEAL": 799
+        },
+        "7-9": {
+          "TAX": 294,
+          "COUP": 2249,
+          "EXCHANGE": 123,
+          "FOREIGN_AID": 178,
+          "INCOME": 179,
+          "ASSASSINATE": 22,
+          "STEAL": 239
+        },
+        "10+": {
+          "COUP": 521
+        }
+      },
+      "learner": "Double-DQN",
+      "num_players": 2,
+      "per_table": {
+        "Honest": {
+          "games": 500,
+          "claims": 4819,
+          "bluffs": 2193,
+          "bluff_rate": 0.4550736667358373,
+          "claims_by_kind": {
+            "tax_duke": 1466,
+            "assassinate": 109,
+            "steal_captain": 592,
+            "exchange_ambassador": 269,
+            "block_duke": 1391,
+            "block_contessa": 11,
+            "block_captain": 463,
+            "block_ambassador": 518
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 687,
+            "assassinate": 34,
+            "steal_captain": 323,
+            "exchange_ambassador": 80,
+            "block_duke": 600,
+            "block_contessa": 9,
+            "block_captain": 235,
+            "block_ambassador": 225
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.4686221009549795,
+            "assassinate": 0.3119266055045872,
+            "steal_captain": 0.5456081081081081,
+            "exchange_ambassador": 0.29739776951672864,
+            "block_duke": 0.43134435657800146,
+            "block_contessa": 0.8181818181818182,
+            "block_captain": 0.5075593952483801,
+            "block_ambassador": 0.4343629343629344
+          },
+          "challenge_rate": 0.038640595903165736,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 83,
+          "challenges_won": 0,
+          "challenge_opportunities": 2148,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.9091949637542922,
+          "blocks_attempted": 2383,
+          "block_opportunities": 2621,
+          "block_bluffs": 1069,
+          "claims_proven": 0,
+          "caught_bluffing": 0,
+          "action_distribution": {
+            "INCOME": 168,
+            "FOREIGN_AID": 539,
+            "COUP": 846,
+            "TAX": 1466,
+            "ASSASSINATE": 109,
+            "STEAL": 592,
+            "EXCHANGE": 269,
+            "PASS": 2303,
+            "CHALLENGE": 83,
+            "BLOCK": 2383,
+            "LOSE_SLOT": 194,
+            "EXCHANGE_KEEP": 267
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 708,
+              "EXCHANGE": 140,
+              "FOREIGN_AID": 133,
+              "STEAL": 215,
+              "INCOME": 24
+            },
+            "3-6": {
+              "TAX": 682,
+              "FOREIGN_AID": 340,
+              "EXCHANGE": 77,
+              "ASSASSINATE": 101,
+              "INCOME": 91,
+              "STEAL": 252
+            },
+            "7-9": {
+              "TAX": 76,
+              "COUP": 705,
+              "EXCHANGE": 52,
+              "FOREIGN_AID": 66,
+              "INCOME": 53,
+              "ASSASSINATE": 8,
+              "STEAL": 125
+            },
+            "10+": {
+              "COUP": 141
+            }
+          }
+        },
+        "Cautious": {
+          "games": 500,
+          "claims": 3215,
+          "bluffs": 1411,
+          "bluff_rate": 0.43888024883359256,
+          "claims_by_kind": {
+            "tax_duke": 1353,
+            "assassinate": 64,
+            "steal_captain": 577,
+            "exchange_ambassador": 297,
+            "block_duke": 0,
+            "block_contessa": 94,
+            "block_captain": 394,
+            "block_ambassador": 436
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 606,
+            "assassinate": 18,
+            "steal_captain": 217,
+            "exchange_ambassador": 130,
+            "block_duke": 0,
+            "block_contessa": 58,
+            "block_captain": 173,
+            "block_ambassador": 209
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.44789356984478934,
+            "assassinate": 0.28125,
+            "steal_captain": 0.37608318890814557,
+            "exchange_ambassador": 0.4377104377104377,
+            "block_duke": 0.0,
+            "block_contessa": 0.6170212765957447,
+            "block_captain": 0.43908629441624364,
+            "block_ambassador": 0.4793577981651376
+          },
+          "challenge_rate": 0.031231925968768073,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 54,
+          "challenges_won": 0,
+          "challenge_opportunities": 1729,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.9094488188976378,
+          "blocks_attempted": 924,
+          "block_opportunities": 1016,
+          "block_bluffs": 440,
+          "claims_proven": 69,
+          "caught_bluffing": 86,
+          "action_distribution": {
+            "INCOME": 100,
+            "FOREIGN_AID": 458,
+            "COUP": 765,
+            "TAX": 1353,
+            "ASSASSINATE": 64,
+            "STEAL": 577,
+            "EXCHANGE": 297,
+            "PASS": 1767,
+            "CHALLENGE": 54,
+            "BLOCK": 924,
+            "LOSE_SLOT": 214,
+            "EXCHANGE_KEEP": 288
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 614,
+              "EXCHANGE": 212,
+              "STEAL": 194,
+              "FOREIGN_AID": 134,
+              "INCOME": 28
+            },
+            "3-6": {
+              "TAX": 613,
+              "ASSASSINATE": 53,
+              "EXCHANGE": 56,
+              "FOREIGN_AID": 287,
+              "STEAL": 282,
+              "INCOME": 43
+            },
+            "7-9": {
+              "TAX": 126,
+              "COUP": 571,
+              "INCOME": 29,
+              "EXCHANGE": 29,
+              "STEAL": 101,
+              "FOREIGN_AID": 37,
+              "ASSASSINATE": 11
+            },
+            "10+": {
+              "COUP": 194
+            }
+          }
+        },
+        "CardCounter": {
+          "games": 500,
+          "claims": 4737,
+          "bluffs": 2177,
+          "bluff_rate": 0.45957356976989655,
+          "claims_by_kind": {
+            "tax_duke": 1518,
+            "assassinate": 63,
+            "steal_captain": 371,
+            "exchange_ambassador": 228,
+            "block_duke": 1744,
+            "block_contessa": 8,
+            "block_captain": 357,
+            "block_ambassador": 448
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 727,
+            "assassinate": 20,
+            "steal_captain": 200,
+            "exchange_ambassador": 69,
+            "block_duke": 854,
+            "block_contessa": 7,
+            "block_captain": 129,
+            "block_ambassador": 171
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.47891963109354413,
+            "assassinate": 0.31746031746031744,
+            "steal_captain": 0.5390835579514824,
+            "exchange_ambassador": 0.3026315789473684,
+            "block_duke": 0.4896788990825688,
+            "block_contessa": 0.875,
+            "block_captain": 0.36134453781512604,
+            "block_ambassador": 0.38169642857142855
+          },
+          "challenge_rate": 0.028072364316905803,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 45,
+          "challenges_won": 0,
+          "challenge_opportunities": 1603,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.9421518054532056,
+          "blocks_attempted": 2557,
+          "block_opportunities": 2714,
+          "block_bluffs": 1161,
+          "claims_proven": 27,
+          "caught_bluffing": 50,
+          "action_distribution": {
+            "INCOME": 175,
+            "FOREIGN_AID": 508,
+            "COUP": 847,
+            "TAX": 1518,
+            "ASSASSINATE": 63,
+            "STEAL": 371,
+            "EXCHANGE": 228,
+            "PASS": 1715,
+            "CHALLENGE": 45,
+            "BLOCK": 2557,
+            "LOSE_SLOT": 158,
+            "EXCHANGE_KEEP": 225
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 713,
+              "EXCHANGE": 124,
+              "FOREIGN_AID": 121,
+              "STEAL": 180,
+              "INCOME": 10
+            },
+            "3-6": {
+              "TAX": 765,
+              "FOREIGN_AID": 314,
+              "EXCHANGE": 63,
+              "INCOME": 69,
+              "STEAL": 181,
+              "ASSASSINATE": 60
+            },
+            "7-9": {
+              "COUP": 713,
+              "EXCHANGE": 41,
+              "FOREIGN_AID": 73,
+              "INCOME": 96,
+              "TAX": 40,
+              "STEAL": 10,
+              "ASSASSINATE": 3
+            },
+            "10+": {
+              "COUP": 134
+            }
+          }
+        },
+        "SelfPlay": {
+          "games": 500,
+          "claims": 2124,
+          "bluffs": 1047,
+          "bluff_rate": 0.4929378531073446,
+          "claims_by_kind": {
+            "tax_duke": 973,
+            "assassinate": 108,
+            "steal_captain": 370,
+            "exchange_ambassador": 318,
+            "block_duke": 102,
+            "block_contessa": 49,
+            "block_captain": 111,
+            "block_ambassador": 93
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 499,
+            "assassinate": 24,
+            "steal_captain": 209,
+            "exchange_ambassador": 132,
+            "block_duke": 49,
+            "block_contessa": 25,
+            "block_captain": 62,
+            "block_ambassador": 47
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.512846865364851,
+            "assassinate": 0.2222222222222222,
+            "steal_captain": 0.5648648648648649,
+            "exchange_ambassador": 0.41509433962264153,
+            "block_duke": 0.4803921568627451,
+            "block_contessa": 0.5102040816326531,
+            "block_captain": 0.5585585585585585,
+            "block_ambassador": 0.5053763440860215
+          },
+          "challenge_rate": 0.1477434679334917,
+          "challenge_precision": 0.5434083601286174,
+          "challenges_attempted": 311,
+          "challenges_won": 169,
+          "challenge_opportunities": 2105,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.5956375838926175,
+          "blocks_attempted": 355,
+          "block_opportunities": 596,
+          "block_bluffs": 183,
+          "claims_proven": 125,
+          "caught_bluffing": 194,
+          "action_distribution": {
+            "INCOME": 199,
+            "FOREIGN_AID": 241,
+            "COUP": 312,
+            "TAX": 973,
+            "ASSASSINATE": 108,
+            "STEAL": 370,
+            "EXCHANGE": 318,
+            "PASS": 2035,
+            "CHALLENGE": 311,
+            "BLOCK": 355,
+            "LOSE_SLOT": 358,
+            "EXCHANGE_KEEP": 294
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 547,
+              "STEAL": 283,
+              "FOREIGN_AID": 163,
+              "EXCHANGE": 238,
+              "INCOME": 85
+            },
+            "3-6": {
+              "TAX": 374,
+              "ASSASSINATE": 108,
+              "STEAL": 84,
+              "EXCHANGE": 79,
+              "FOREIGN_AID": 76,
+              "INCOME": 113
+            },
+            "7-9": {
+              "COUP": 260,
+              "TAX": 52,
+              "STEAL": 3,
+              "INCOME": 1,
+              "FOREIGN_AID": 2,
+              "EXCHANGE": 1
+            },
+            "10+": {
+              "COUP": 52
+            }
+          }
+        }
+      },
+      "vs_honest": {
+        "games": 500,
+        "claims": 4819,
+        "bluffs": 2193,
+        "bluff_rate": 0.4550736667358373,
+        "claims_by_kind": {
+          "tax_duke": 1466,
+          "assassinate": 109,
+          "steal_captain": 592,
+          "exchange_ambassador": 269,
+          "block_duke": 1391,
+          "block_contessa": 11,
+          "block_captain": 463,
+          "block_ambassador": 518
+        },
+        "bluffs_by_kind": {
+          "tax_duke": 687,
+          "assassinate": 34,
+          "steal_captain": 323,
+          "exchange_ambassador": 80,
+          "block_duke": 600,
+          "block_contessa": 9,
+          "block_captain": 235,
+          "block_ambassador": 225
+        },
+        "bluff_rate_by_kind": {
+          "tax_duke": 0.4686221009549795,
+          "assassinate": 0.3119266055045872,
+          "steal_captain": 0.5456081081081081,
+          "exchange_ambassador": 0.29739776951672864,
+          "block_duke": 0.43134435657800146,
+          "block_contessa": 0.8181818181818182,
+          "block_captain": 0.5075593952483801,
+          "block_ambassador": 0.4343629343629344
+        },
+        "challenge_rate": 0.038640595903165736,
+        "challenge_precision": 0.0,
+        "challenges_attempted": 83,
+        "challenges_won": 0,
+        "challenge_opportunities": 2148,
+        "impossible_claim_challenge_rate": 0.0,
+        "impossible_claim_opportunities": 0,
+        "challenges_on_impossible_claim": 0,
+        "block_rate": 0.9091949637542922,
+        "blocks_attempted": 2383,
+        "block_opportunities": 2621,
+        "block_bluffs": 1069,
+        "claims_proven": 0,
+        "caught_bluffing": 0,
+        "action_distribution": {
+          "INCOME": 168,
+          "FOREIGN_AID": 539,
+          "COUP": 846,
+          "TAX": 1466,
+          "ASSASSINATE": 109,
+          "STEAL": 592,
+          "EXCHANGE": 269,
+          "PASS": 2303,
+          "CHALLENGE": 83,
+          "BLOCK": 2383,
+          "LOSE_SLOT": 194,
+          "EXCHANGE_KEEP": 267
+        },
+        "coin_brackets": {
+          "0-2": {
+            "TAX": 708,
+            "EXCHANGE": 140,
+            "FOREIGN_AID": 133,
+            "STEAL": 215,
+            "INCOME": 24
+          },
+          "3-6": {
+            "TAX": 682,
+            "FOREIGN_AID": 340,
+            "EXCHANGE": 77,
+            "ASSASSINATE": 101,
+            "INCOME": 91,
+            "STEAL": 252
+          },
+          "7-9": {
+            "TAX": 76,
+            "COUP": 705,
+            "EXCHANGE": 52,
+            "FOREIGN_AID": 66,
+            "INCOME": 53,
+            "ASSASSINATE": 8,
+            "STEAL": 125
+          },
+          "10+": {
+            "COUP": 141
+          }
+        }
+      }
+    },
+    "PFSP-PPO-4P": {
+      "games": 2000,
+      "claims": 23248,
+      "bluffs": 10105,
+      "bluff_rate": 0.4346610461114935,
+      "claims_by_kind": {
+        "tax_duke": 8478,
+        "assassinate": 1623,
+        "steal_captain": 2690,
+        "exchange_ambassador": 1617,
+        "block_duke": 3125,
+        "block_contessa": 880,
+        "block_captain": 2813,
+        "block_ambassador": 2022
+      },
+      "bluffs_by_kind": {
+        "tax_duke": 4687,
+        "assassinate": 124,
+        "steal_captain": 601,
+        "exchange_ambassador": 285,
+        "block_duke": 1375,
+        "block_contessa": 395,
+        "block_captain": 1357,
+        "block_ambassador": 1281
+      },
+      "bluff_rate_by_kind": {
+        "tax_duke": 0.5528426515687662,
+        "assassinate": 0.07640172520024646,
+        "steal_captain": 0.2234200743494424,
+        "exchange_ambassador": 0.17625231910946196,
+        "block_duke": 0.44,
+        "block_contessa": 0.44886363636363635,
+        "block_captain": 0.48240312833274085,
+        "block_ambassador": 0.6335311572700296
+      },
+      "challenge_rate": 0.01563270843611248,
+      "challenge_precision": 0.22682445759368836,
+      "challenges_attempted": 507,
+      "challenges_won": 115,
+      "challenge_opportunities": 32432,
+      "impossible_claim_challenge_rate": 0.8285714285714286,
+      "impossible_claim_opportunities": 35,
+      "challenges_on_impossible_claim": 29,
+      "block_rate": 0.78949718674645,
+      "blocks_attempted": 8840,
+      "block_opportunities": 11197,
+      "block_bluffs": 4408,
+      "claims_proven": 664,
+      "caught_bluffing": 682,
+      "action_distribution": {
+        "INCOME": 936,
+        "FOREIGN_AID": 652,
+        "COUP": 3015,
+        "TAX": 8478,
+        "ASSASSINATE": 1623,
+        "STEAL": 2690,
+        "EXCHANGE": 1617,
+        "PASS": 34282,
+        "CHALLENGE": 507,
+        "BLOCK": 8840,
+        "LOSE_SLOT": 1559,
+        "EXCHANGE_KEEP": 1590
+      },
+      "coin_brackets": {
+        "0-2": {
+          "TAX": 4061,
+          "EXCHANGE": 1480,
+          "INCOME": 867,
+          "STEAL": 1357,
+          "FOREIGN_AID": 500
+        },
+        "3-6": {
+          "ASSASSINATE": 1526,
+          "TAX": 3810,
+          "FOREIGN_AID": 146,
+          "STEAL": 1252,
+          "EXCHANGE": 129,
+          "INCOME": 68
+        },
+        "7-9": {
+          "COUP": 2420,
+          "ASSASSINATE": 97,
+          "TAX": 607,
+          "STEAL": 81,
+          "INCOME": 1,
+          "EXCHANGE": 8,
+          "FOREIGN_AID": 6
+        },
+        "10+": {
+          "COUP": 595
+        }
+      },
+      "learner": "PFSP-PPO-4P",
+      "num_players": 4,
+      "per_table": {
+        "Honest": {
+          "games": 500,
+          "claims": 10405,
+          "bluffs": 4936,
+          "bluff_rate": 0.47438731379144644,
+          "claims_by_kind": {
+            "tax_duke": 3250,
+            "assassinate": 509,
+            "steal_captain": 889,
+            "exchange_ambassador": 425,
+            "block_duke": 2812,
+            "block_contessa": 91,
+            "block_captain": 1430,
+            "block_ambassador": 999
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 1869,
+            "assassinate": 38,
+            "steal_captain": 219,
+            "exchange_ambassador": 64,
+            "block_duke": 1262,
+            "block_contessa": 40,
+            "block_captain": 774,
+            "block_ambassador": 670
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.575076923076923,
+            "assassinate": 0.07465618860510806,
+            "steal_captain": 0.24634420697412823,
+            "exchange_ambassador": 0.15058823529411763,
+            "block_duke": 0.4487908961593172,
+            "block_contessa": 0.43956043956043955,
+            "block_captain": 0.5412587412587413,
+            "block_ambassador": 0.6706706706706707
+          },
+          "challenge_rate": 0.008642514185945003,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 99,
+          "challenges_won": 0,
+          "challenge_opportunities": 11455,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.7748873710216538,
+          "blocks_attempted": 5332,
+          "block_opportunities": 6881,
+          "block_bluffs": 2746,
+          "claims_proven": 0,
+          "caught_bluffing": 52,
+          "action_distribution": {
+            "INCOME": 225,
+            "FOREIGN_AID": 149,
+            "COUP": 1248,
+            "TAX": 3250,
+            "ASSASSINATE": 509,
+            "STEAL": 889,
+            "EXCHANGE": 425,
+            "PASS": 12905,
+            "CHALLENGE": 99,
+            "BLOCK": 5332,
+            "LOSE_SLOT": 382,
+            "EXCHANGE_KEEP": 425
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 1357,
+              "EXCHANGE": 394,
+              "INCOME": 208,
+              "STEAL": 473,
+              "FOREIGN_AID": 113
+            },
+            "3-6": {
+              "ASSASSINATE": 476,
+              "TAX": 1557,
+              "FOREIGN_AID": 32,
+              "STEAL": 388,
+              "EXCHANGE": 27,
+              "INCOME": 16
+            },
+            "7-9": {
+              "COUP": 913,
+              "ASSASSINATE": 33,
+              "TAX": 336,
+              "STEAL": 28,
+              "INCOME": 1,
+              "EXCHANGE": 4,
+              "FOREIGN_AID": 4
+            },
+            "10+": {
+              "COUP": 335
+            }
+          }
+        },
+        "Cautious": {
+          "games": 500,
+          "claims": 4144,
+          "bluffs": 1544,
+          "bluff_rate": 0.37258687258687256,
+          "claims_by_kind": {
+            "tax_duke": 1571,
+            "assassinate": 346,
+            "steal_captain": 562,
+            "exchange_ambassador": 436,
+            "block_duke": 0,
+            "block_contessa": 276,
+            "block_captain": 532,
+            "block_ambassador": 421
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 781,
+            "assassinate": 26,
+            "steal_captain": 91,
+            "exchange_ambassador": 81,
+            "block_duke": 0,
+            "block_contessa": 130,
+            "block_captain": 201,
+            "block_ambassador": 234
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.49713558243157224,
+            "assassinate": 0.07514450867052024,
+            "steal_captain": 0.1619217081850534,
+            "exchange_ambassador": 0.18577981651376146,
+            "block_duke": 0.0,
+            "block_contessa": 0.47101449275362317,
+            "block_captain": 0.37781954887218044,
+            "block_ambassador": 0.5558194774346793
+          },
+          "challenge_rate": 0.018292682926829267,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 99,
+          "challenges_won": 0,
+          "challenge_opportunities": 5412,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.886085075702956,
+          "blocks_attempted": 1229,
+          "block_opportunities": 1387,
+          "block_bluffs": 565,
+          "claims_proven": 313,
+          "caught_bluffing": 287,
+          "action_distribution": {
+            "INCOME": 278,
+            "FOREIGN_AID": 193,
+            "COUP": 538,
+            "TAX": 1571,
+            "ASSASSINATE": 346,
+            "STEAL": 562,
+            "EXCHANGE": 436,
+            "PASS": 5471,
+            "CHALLENGE": 99,
+            "BLOCK": 1229,
+            "LOSE_SLOT": 384,
+            "EXCHANGE_KEEP": 423
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 821,
+              "EXCHANGE": 400,
+              "INCOME": 251,
+              "STEAL": 244,
+              "FOREIGN_AID": 140
+            },
+            "3-6": {
+              "ASSASSINATE": 332,
+              "TAX": 676,
+              "STEAL": 302,
+              "FOREIGN_AID": 53,
+              "INCOME": 27,
+              "EXCHANGE": 35
+            },
+            "7-9": {
+              "COUP": 465,
+              "TAX": 74,
+              "ASSASSINATE": 14,
+              "STEAL": 16,
+              "EXCHANGE": 1
+            },
+            "10+": {
+              "COUP": 73
+            }
+          }
+        },
+        "CardCounter": {
+          "games": 500,
+          "claims": 4890,
+          "bluffs": 1894,
+          "bluff_rate": 0.38732106339468303,
+          "claims_by_kind": {
+            "tax_duke": 1803,
+            "assassinate": 403,
+            "steal_captain": 701,
+            "exchange_ambassador": 412,
+            "block_duke": 232,
+            "block_contessa": 212,
+            "block_captain": 648,
+            "block_ambassador": 479
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 931,
+            "assassinate": 24,
+            "steal_captain": 118,
+            "exchange_ambassador": 79,
+            "block_duke": 80,
+            "block_contessa": 85,
+            "block_captain": 284,
+            "block_ambassador": 293
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.5163616195230172,
+            "assassinate": 0.05955334987593052,
+            "steal_captain": 0.16833095577746077,
+            "exchange_ambassador": 0.19174757281553398,
+            "block_duke": 0.3448275862068966,
+            "block_contessa": 0.4009433962264151,
+            "block_captain": 0.4382716049382716,
+            "block_ambassador": 0.6116910229645094
+          },
+          "challenge_rate": 0.01237146529562982,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 77,
+          "challenges_won": 0,
+          "challenge_opportunities": 6224,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.8081275720164609,
+          "blocks_attempted": 1571,
+          "block_opportunities": 1944,
+          "block_bluffs": 742,
+          "claims_proven": 241,
+          "caught_bluffing": 231,
+          "action_distribution": {
+            "INCOME": 316,
+            "FOREIGN_AID": 206,
+            "COUP": 664,
+            "TAX": 1803,
+            "ASSASSINATE": 403,
+            "STEAL": 701,
+            "EXCHANGE": 412,
+            "PASS": 6520,
+            "CHALLENGE": 77,
+            "BLOCK": 1571,
+            "LOSE_SLOT": 395,
+            "EXCHANGE_KEEP": 399
+          },
+          "coin_brackets": {
+            "0-2": {
+              "TAX": 935,
+              "EXCHANGE": 368,
+              "STEAL": 341,
+              "FOREIGN_AID": 168,
+              "INCOME": 297
+            },
+            "3-6": {
+              "TAX": 786,
+              "EXCHANGE": 44,
+              "STEAL": 338,
+              "ASSASSINATE": 384,
+              "INCOME": 19,
+              "FOREIGN_AID": 37
+            },
+            "7-9": {
+              "COUP": 585,
+              "TAX": 82,
+              "ASSASSINATE": 19,
+              "FOREIGN_AID": 1,
+              "STEAL": 22
+            },
+            "10+": {
+              "COUP": 79
+            }
+          }
+        },
+        "SelfPlay": {
+          "games": 500,
+          "claims": 3809,
+          "bluffs": 1731,
+          "bluff_rate": 0.45444998687319504,
+          "claims_by_kind": {
+            "tax_duke": 1854,
+            "assassinate": 365,
+            "steal_captain": 538,
+            "exchange_ambassador": 344,
+            "block_duke": 81,
+            "block_contessa": 301,
+            "block_captain": 203,
+            "block_ambassador": 123
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 1106,
+            "assassinate": 36,
+            "steal_captain": 173,
+            "exchange_ambassador": 61,
+            "block_duke": 33,
+            "block_contessa": 140,
+            "block_captain": 98,
+            "block_ambassador": 84
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.5965480043149946,
+            "assassinate": 0.09863013698630137,
+            "steal_captain": 0.3215613382899628,
+            "exchange_ambassador": 0.17732558139534885,
+            "block_duke": 0.4074074074074074,
+            "block_contessa": 0.46511627906976744,
+            "block_captain": 0.4827586206896552,
+            "block_ambassador": 0.6829268292682927
+          },
+          "challenge_rate": 0.02483674124826036,
+          "challenge_precision": 0.4956896551724138,
+          "challenges_attempted": 232,
+          "challenges_won": 115,
+          "challenge_opportunities": 9341,
+          "impossible_claim_challenge_rate": 0.8285714285714286,
+          "impossible_claim_opportunities": 35,
+          "challenges_on_impossible_claim": 29,
+          "block_rate": 0.7187817258883249,
+          "blocks_attempted": 708,
+          "block_opportunities": 985,
+          "block_bluffs": 355,
+          "claims_proven": 110,
+          "caught_bluffing": 112,
+          "action_distribution": {
+            "INCOME": 117,
+            "FOREIGN_AID": 104,
+            "COUP": 565,
+            "TAX": 1854,
+            "ASSASSINATE": 365,
+            "STEAL": 538,
+            "EXCHANGE": 344,
+            "PASS": 9386,
+            "CHALLENGE": 232,
+            "BLOCK": 708,
+            "LOSE_SLOT": 398,
+            "EXCHANGE_KEEP": 343
+          },
+          "coin_brackets": {
+            "0-2": {
+              "EXCHANGE": 318,
+              "TAX": 948,
+              "STEAL": 299,
+              "INCOME": 111,
+              "FOREIGN_AID": 79
+            },
+            "3-6": {
+              "TAX": 791,
+              "ASSASSINATE": 334,
+              "STEAL": 224,
+              "FOREIGN_AID": 24,
+              "EXCHANGE": 23,
+              "INCOME": 6
+            },
+            "7-9": {
+              "COUP": 457,
+              "TAX": 115,
+              "ASSASSINATE": 31,
+              "STEAL": 15,
+              "EXCHANGE": 3,
+              "FOREIGN_AID": 1
+            },
+            "10+": {
+              "COUP": 108
+            }
+          }
+        }
+      },
+      "vs_honest": {
+        "games": 500,
+        "claims": 10405,
+        "bluffs": 4936,
+        "bluff_rate": 0.47438731379144644,
+        "claims_by_kind": {
+          "tax_duke": 3250,
+          "assassinate": 509,
+          "steal_captain": 889,
+          "exchange_ambassador": 425,
+          "block_duke": 2812,
+          "block_contessa": 91,
+          "block_captain": 1430,
+          "block_ambassador": 999
+        },
+        "bluffs_by_kind": {
+          "tax_duke": 1869,
+          "assassinate": 38,
+          "steal_captain": 219,
+          "exchange_ambassador": 64,
+          "block_duke": 1262,
+          "block_contessa": 40,
+          "block_captain": 774,
+          "block_ambassador": 670
+        },
+        "bluff_rate_by_kind": {
+          "tax_duke": 0.575076923076923,
+          "assassinate": 0.07465618860510806,
+          "steal_captain": 0.24634420697412823,
+          "exchange_ambassador": 0.15058823529411763,
+          "block_duke": 0.4487908961593172,
+          "block_contessa": 0.43956043956043955,
+          "block_captain": 0.5412587412587413,
+          "block_ambassador": 0.6706706706706707
+        },
+        "challenge_rate": 0.008642514185945003,
+        "challenge_precision": 0.0,
+        "challenges_attempted": 99,
+        "challenges_won": 0,
+        "challenge_opportunities": 11455,
+        "impossible_claim_challenge_rate": 0.0,
+        "impossible_claim_opportunities": 0,
+        "challenges_on_impossible_claim": 0,
+        "block_rate": 0.7748873710216538,
+        "blocks_attempted": 5332,
+        "block_opportunities": 6881,
+        "block_bluffs": 2746,
+        "claims_proven": 0,
+        "caught_bluffing": 52,
+        "action_distribution": {
+          "INCOME": 225,
+          "FOREIGN_AID": 149,
+          "COUP": 1248,
+          "TAX": 3250,
+          "ASSASSINATE": 509,
+          "STEAL": 889,
+          "EXCHANGE": 425,
+          "PASS": 12905,
+          "CHALLENGE": 99,
+          "BLOCK": 5332,
+          "LOSE_SLOT": 382,
+          "EXCHANGE_KEEP": 425
+        },
+        "coin_brackets": {
+          "0-2": {
+            "TAX": 1357,
+            "EXCHANGE": 394,
+            "INCOME": 208,
+            "STEAL": 473,
+            "FOREIGN_AID": 113
+          },
+          "3-6": {
+            "ASSASSINATE": 476,
+            "TAX": 1557,
+            "FOREIGN_AID": 32,
+            "STEAL": 388,
+            "EXCHANGE": 27,
+            "INCOME": 16
+          },
+          "7-9": {
+            "COUP": 913,
+            "ASSASSINATE": 33,
+            "TAX": 336,
+            "STEAL": 28,
+            "INCOME": 1,
+            "EXCHANGE": 4,
+            "FOREIGN_AID": 4
+          },
+          "10+": {
+            "COUP": 335
+          }
+        }
+      }
+    },
+    "Double-DQN-4P": {
+      "games": 2000,
+      "claims": 13655,
+      "bluffs": 5055,
+      "bluff_rate": 0.3701940681069205,
+      "claims_by_kind": {
+        "tax_duke": 2091,
+        "assassinate": 1740,
+        "steal_captain": 3747,
+        "exchange_ambassador": 1548,
+        "block_duke": 1471,
+        "block_contessa": 556,
+        "block_captain": 1049,
+        "block_ambassador": 1453
+      },
+      "bluffs_by_kind": {
+        "tax_duke": 608,
+        "assassinate": 571,
+        "steal_captain": 1218,
+        "exchange_ambassador": 696,
+        "block_duke": 414,
+        "block_contessa": 252,
+        "block_captain": 484,
+        "block_ambassador": 812
+      },
+      "bluff_rate_by_kind": {
+        "tax_duke": 0.29076996652319465,
+        "assassinate": 0.3281609195402299,
+        "steal_captain": 0.32506004803843075,
+        "exchange_ambassador": 0.4496124031007752,
+        "block_duke": 0.28144119646498983,
+        "block_contessa": 0.45323741007194246,
+        "block_captain": 0.4613918017159199,
+        "block_ambassador": 0.5588437715072264
+      },
+      "challenge_rate": 0.01530857939424661,
+      "challenge_precision": 0.23178807947019867,
+      "challenges_attempted": 604,
+      "challenges_won": 140,
+      "challenge_opportunities": 39455,
+      "impossible_claim_challenge_rate": 0.45714285714285713,
+      "impossible_claim_opportunities": 35,
+      "challenges_on_impossible_claim": 16,
+      "block_rate": 0.3448827292110874,
+      "blocks_attempted": 4529,
+      "block_opportunities": 13132,
+      "block_bluffs": 1962,
+      "claims_proven": 563,
+      "caught_bluffing": 620,
+      "action_distribution": {
+        "INCOME": 6162,
+        "FOREIGN_AID": 5476,
+        "COUP": 1136,
+        "TAX": 2091,
+        "ASSASSINATE": 1740,
+        "STEAL": 3747,
+        "EXCHANGE": 1548,
+        "PASS": 47454,
+        "CHALLENGE": 604,
+        "BLOCK": 4529,
+        "LOSE_SLOT": 1628,
+        "EXCHANGE_KEEP": 1454
+      },
+      "coin_brackets": {
+        "0-2": {
+          "STEAL": 1864,
+          "TAX": 825,
+          "FOREIGN_AID": 2567,
+          "INCOME": 3245,
+          "EXCHANGE": 729
+        },
+        "3-6": {
+          "INCOME": 2548,
+          "ASSASSINATE": 1664,
+          "TAX": 1131,
+          "STEAL": 1576,
+          "FOREIGN_AID": 2500,
+          "EXCHANGE": 763
+        },
+        "7-9": {
+          "ASSASSINATE": 76,
+          "COUP": 814,
+          "TAX": 135,
+          "EXCHANGE": 56,
+          "FOREIGN_AID": 409,
+          "INCOME": 369,
+          "STEAL": 307
+        },
+        "10+": {
+          "COUP": 322
+        }
+      },
+      "learner": "Double-DQN-4P",
+      "num_players": 4,
+      "per_table": {
+        "Honest": {
+          "games": 500,
+          "claims": 4991,
+          "bluffs": 2003,
+          "bluff_rate": 0.4013223802845121,
+          "claims_by_kind": {
+            "tax_duke": 604,
+            "assassinate": 536,
+            "steal_captain": 1195,
+            "exchange_ambassador": 527,
+            "block_duke": 991,
+            "block_contessa": 111,
+            "block_captain": 328,
+            "block_ambassador": 699
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 167,
+            "assassinate": 181,
+            "steal_captain": 485,
+            "exchange_ambassador": 258,
+            "block_duke": 220,
+            "block_contessa": 78,
+            "block_captain": 151,
+            "block_ambassador": 463
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.2764900662251656,
+            "assassinate": 0.3376865671641791,
+            "steal_captain": 0.40585774058577406,
+            "exchange_ambassador": 0.48956356736242884,
+            "block_duke": 0.22199798183652875,
+            "block_contessa": 0.7027027027027027,
+            "block_captain": 0.4603658536585366,
+            "block_ambassador": 0.6623748211731044
+          },
+          "challenge_rate": 0.007714868655955114,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 121,
+          "challenges_won": 0,
+          "challenge_opportunities": 15684,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.3448331713637836,
+          "blocks_attempted": 2129,
+          "block_opportunities": 6174,
+          "block_bluffs": 912,
+          "claims_proven": 0,
+          "caught_bluffing": 38,
+          "action_distribution": {
+            "INCOME": 2157,
+            "FOREIGN_AID": 1682,
+            "COUP": 320,
+            "TAX": 604,
+            "ASSASSINATE": 536,
+            "STEAL": 1195,
+            "EXCHANGE": 527,
+            "PASS": 19608,
+            "CHALLENGE": 121,
+            "BLOCK": 2129,
+            "LOSE_SLOT": 428,
+            "EXCHANGE_KEEP": 521
+          },
+          "coin_brackets": {
+            "0-2": {
+              "STEAL": 544,
+              "TAX": 241,
+              "FOREIGN_AID": 763,
+              "INCOME": 1054,
+              "EXCHANGE": 251
+            },
+            "3-6": {
+              "INCOME": 967,
+              "ASSASSINATE": 513,
+              "TAX": 323,
+              "STEAL": 522,
+              "FOREIGN_AID": 799,
+              "EXCHANGE": 255
+            },
+            "7-9": {
+              "ASSASSINATE": 23,
+              "COUP": 234,
+              "TAX": 40,
+              "EXCHANGE": 21,
+              "FOREIGN_AID": 120,
+              "INCOME": 136,
+              "STEAL": 129
+            },
+            "10+": {
+              "COUP": 86
+            }
+          }
+        },
+        "Cautious": {
+          "games": 500,
+          "claims": 2672,
+          "bluffs": 1028,
+          "bluff_rate": 0.3847305389221557,
+          "claims_by_kind": {
+            "tax_duke": 485,
+            "assassinate": 342,
+            "steal_captain": 852,
+            "exchange_ambassador": 307,
+            "block_duke": 0,
+            "block_contessa": 126,
+            "block_captain": 310,
+            "block_ambassador": 250
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 139,
+            "assassinate": 108,
+            "steal_captain": 296,
+            "exchange_ambassador": 119,
+            "block_duke": 0,
+            "block_contessa": 50,
+            "block_captain": 175,
+            "block_ambassador": 141
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.2865979381443299,
+            "assassinate": 0.3157894736842105,
+            "steal_captain": 0.3474178403755869,
+            "exchange_ambassador": 0.38762214983713356,
+            "block_duke": 0.0,
+            "block_contessa": 0.3968253968253968,
+            "block_captain": 0.5645161290322581,
+            "block_ambassador": 0.564
+          },
+          "challenge_rate": 0.011349651305893615,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 83,
+          "challenges_won": 0,
+          "challenge_opportunities": 7313,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.5492393915132106,
+          "blocks_attempted": 686,
+          "block_opportunities": 1249,
+          "block_bluffs": 366,
+          "claims_proven": 228,
+          "caught_bluffing": 237,
+          "action_distribution": {
+            "INCOME": 1267,
+            "FOREIGN_AID": 1043,
+            "COUP": 231,
+            "TAX": 485,
+            "ASSASSINATE": 342,
+            "STEAL": 852,
+            "EXCHANGE": 307,
+            "PASS": 7793,
+            "CHALLENGE": 83,
+            "BLOCK": 686,
+            "LOSE_SLOT": 393,
+            "EXCHANGE_KEEP": 269
+          },
+          "coin_brackets": {
+            "0-2": {
+              "INCOME": 718,
+              "STEAL": 456,
+              "FOREIGN_AID": 474,
+              "TAX": 185,
+              "EXCHANGE": 159
+            },
+            "3-6": {
+              "ASSASSINATE": 330,
+              "STEAL": 330,
+              "INCOME": 494,
+              "FOREIGN_AID": 510,
+              "TAX": 277,
+              "EXCHANGE": 137
+            },
+            "7-9": {
+              "FOREIGN_AID": 59,
+              "COUP": 175,
+              "STEAL": 66,
+              "ASSASSINATE": 12,
+              "INCOME": 55,
+              "EXCHANGE": 11,
+              "TAX": 23
+            },
+            "10+": {
+              "COUP": 56
+            }
+          }
+        },
+        "CardCounter": {
+          "games": 500,
+          "claims": 2679,
+          "bluffs": 923,
+          "bluff_rate": 0.3445315416200075,
+          "claims_by_kind": {
+            "tax_duke": 507,
+            "assassinate": 392,
+            "steal_captain": 712,
+            "exchange_ambassador": 341,
+            "block_duke": 129,
+            "block_contessa": 101,
+            "block_captain": 209,
+            "block_ambassador": 288
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 145,
+            "assassinate": 126,
+            "steal_captain": 200,
+            "exchange_ambassador": 148,
+            "block_duke": 61,
+            "block_contessa": 43,
+            "block_captain": 86,
+            "block_ambassador": 114
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.2859960552268245,
+            "assassinate": 0.32142857142857145,
+            "steal_captain": 0.2808988764044944,
+            "exchange_ambassador": 0.4340175953079179,
+            "block_duke": 0.4728682170542636,
+            "block_contessa": 0.42574257425742573,
+            "block_captain": 0.41148325358851673,
+            "block_ambassador": 0.3958333333333333
+          },
+          "challenge_rate": 0.011307157057654076,
+          "challenge_precision": 0.0,
+          "challenges_attempted": 91,
+          "challenges_won": 0,
+          "challenge_opportunities": 8048,
+          "impossible_claim_challenge_rate": 0.0,
+          "impossible_claim_opportunities": 0,
+          "challenges_on_impossible_claim": 0,
+          "block_rate": 0.4792353328938695,
+          "blocks_attempted": 727,
+          "block_opportunities": 1517,
+          "block_bluffs": 304,
+          "claims_proven": 173,
+          "caught_bluffing": 194,
+          "action_distribution": {
+            "INCOME": 1422,
+            "FOREIGN_AID": 1211,
+            "COUP": 230,
+            "TAX": 507,
+            "ASSASSINATE": 392,
+            "STEAL": 712,
+            "EXCHANGE": 341,
+            "PASS": 8747,
+            "CHALLENGE": 91,
+            "BLOCK": 727,
+            "LOSE_SLOT": 418,
+            "EXCHANGE_KEEP": 313
+          },
+          "coin_brackets": {
+            "0-2": {
+              "FOREIGN_AID": 570,
+              "INCOME": 786,
+              "STEAL": 347,
+              "TAX": 211,
+              "EXCHANGE": 143
+            },
+            "3-6": {
+              "TAX": 266,
+              "INCOME": 570,
+              "ASSASSINATE": 378,
+              "EXCHANGE": 191,
+              "FOREIGN_AID": 556,
+              "STEAL": 320
+            },
+            "7-9": {
+              "COUP": 164,
+              "TAX": 30,
+              "FOREIGN_AID": 85,
+              "ASSASSINATE": 14,
+              "INCOME": 66,
+              "STEAL": 45,
+              "EXCHANGE": 7
+            },
+            "10+": {
+              "COUP": 66
+            }
+          }
+        },
+        "SelfPlay": {
+          "games": 500,
+          "claims": 3313,
+          "bluffs": 1101,
+          "bluff_rate": 0.33232719589495924,
+          "claims_by_kind": {
+            "tax_duke": 495,
+            "assassinate": 470,
+            "steal_captain": 988,
+            "exchange_ambassador": 373,
+            "block_duke": 351,
+            "block_contessa": 218,
+            "block_captain": 202,
+            "block_ambassador": 216
+          },
+          "bluffs_by_kind": {
+            "tax_duke": 157,
+            "assassinate": 156,
+            "steal_captain": 237,
+            "exchange_ambassador": 171,
+            "block_duke": 133,
+            "block_contessa": 81,
+            "block_captain": 72,
+            "block_ambassador": 94
+          },
+          "bluff_rate_by_kind": {
+            "tax_duke": 0.31717171717171716,
+            "assassinate": 0.33191489361702126,
+            "steal_captain": 0.23987854251012145,
+            "exchange_ambassador": 0.4584450402144772,
+            "block_duke": 0.3789173789173789,
+            "block_contessa": 0.37155963302752293,
+            "block_captain": 0.3564356435643564,
+            "block_ambassador": 0.4351851851851852
+          },
+          "challenge_rate": 0.036741973840665874,
+          "challenge_precision": 0.45307443365695793,
+          "challenges_attempted": 309,
+          "challenges_won": 140,
+          "challenge_opportunities": 8410,
+          "impossible_claim_challenge_rate": 0.45714285714285713,
+          "impossible_claim_opportunities": 35,
+          "challenges_on_impossible_claim": 16,
+          "block_rate": 0.23544847328244276,
+          "blocks_attempted": 987,
+          "block_opportunities": 4192,
+          "block_bluffs": 380,
+          "claims_proven": 162,
+          "caught_bluffing": 151,
+          "action_distribution": {
+            "INCOME": 1316,
+            "FOREIGN_AID": 1540,
+            "COUP": 355,
+            "TAX": 495,
+            "ASSASSINATE": 470,
+            "STEAL": 988,
+            "EXCHANGE": 373,
+            "PASS": 11306,
+            "CHALLENGE": 309,
+            "BLOCK": 987,
+            "LOSE_SLOT": 389,
+            "EXCHANGE_KEEP": 351
+          },
+          "coin_brackets": {
+            "0-2": {
+              "STEAL": 517,
+              "INCOME": 687,
+              "FOREIGN_AID": 760,
+              "EXCHANGE": 176,
+              "TAX": 188
+            },
+            "3-6": {
+              "ASSASSINATE": 443,
+              "STEAL": 404,
+              "TAX": 265,
+              "INCOME": 517,
+              "EXCHANGE": 180,
+              "FOREIGN_AID": 635
+            },
+            "7-9": {
+              "INCOME": 112,
+              "TAX": 42,
+              "COUP": 241,
+              "STEAL": 67,
+              "ASSASSINATE": 27,
+              "EXCHANGE": 17,
+              "FOREIGN_AID": 145
+            },
+            "10+": {
+              "COUP": 114
+            }
+          }
+        }
+      },
+      "vs_honest": {
+        "games": 500,
+        "claims": 4991,
+        "bluffs": 2003,
+        "bluff_rate": 0.4013223802845121,
+        "claims_by_kind": {
+          "tax_duke": 604,
+          "assassinate": 536,
+          "steal_captain": 1195,
+          "exchange_ambassador": 527,
+          "block_duke": 991,
+          "block_contessa": 111,
+          "block_captain": 328,
+          "block_ambassador": 699
+        },
+        "bluffs_by_kind": {
+          "tax_duke": 167,
+          "assassinate": 181,
+          "steal_captain": 485,
+          "exchange_ambassador": 258,
+          "block_duke": 220,
+          "block_contessa": 78,
+          "block_captain": 151,
+          "block_ambassador": 463
+        },
+        "bluff_rate_by_kind": {
+          "tax_duke": 0.2764900662251656,
+          "assassinate": 0.3376865671641791,
+          "steal_captain": 0.40585774058577406,
+          "exchange_ambassador": 0.48956356736242884,
+          "block_duke": 0.22199798183652875,
+          "block_contessa": 0.7027027027027027,
+          "block_captain": 0.4603658536585366,
+          "block_ambassador": 0.6623748211731044
+        },
+        "challenge_rate": 0.007714868655955114,
+        "challenge_precision": 0.0,
+        "challenges_attempted": 121,
+        "challenges_won": 0,
+        "challenge_opportunities": 15684,
+        "impossible_claim_challenge_rate": 0.0,
+        "impossible_claim_opportunities": 0,
+        "challenges_on_impossible_claim": 0,
+        "block_rate": 0.3448331713637836,
+        "blocks_attempted": 2129,
+        "block_opportunities": 6174,
+        "block_bluffs": 912,
+        "claims_proven": 0,
+        "caught_bluffing": 38,
+        "action_distribution": {
+          "INCOME": 2157,
+          "FOREIGN_AID": 1682,
+          "COUP": 320,
+          "TAX": 604,
+          "ASSASSINATE": 536,
+          "STEAL": 1195,
+          "EXCHANGE": 527,
+          "PASS": 19608,
+          "CHALLENGE": 121,
+          "BLOCK": 2129,
+          "LOSE_SLOT": 428,
+          "EXCHANGE_KEEP": 521
+        },
+        "coin_brackets": {
+          "0-2": {
+            "STEAL": 544,
+            "TAX": 241,
+            "FOREIGN_AID": 763,
+            "INCOME": 1054,
+            "EXCHANGE": 251
+          },
+          "3-6": {
+            "INCOME": 967,
+            "ASSASSINATE": 513,
+            "TAX": 323,
+            "STEAL": 522,
+            "FOREIGN_AID": 799,
+            "EXCHANGE": 255
+          },
+          "7-9": {
+            "ASSASSINATE": 23,
+            "COUP": 234,
+            "TAX": 40,
+            "EXCHANGE": 21,
+            "FOREIGN_AID": 120,
+            "INCOME": 136,
+            "STEAL": 129
+          },
+          "10+": {
+            "COUP": 86
+          }
+        }
+      }
+    }
+  },
+  "impossible_claim_probe": {
+    "two_player": {
+      "scenarios": 1000,
+      "num_players": 2,
+      "agents": {
+        "PFSP-PPO": {
+          "successes": 590,
+          "trials": 1000,
+          "rate": 0.59,
+          "ci_low": 0.5592284411186709,
+          "ci_high": 0.6200827423539291,
+          "half_width": 0.03042715061762913,
+          "agent": "PFSP-PPO",
+          "challenge_rate": 0.59,
+          "deterministic_challenge_rate": 0.595,
+          "mean_challenge_prob": 0.5887907539925072,
+          "challenge_rate_action_phase": 0.55,
+          "challenge_rate_block_phase": 0.63,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Naive-PPO": {
+          "successes": 826,
+          "trials": 1000,
+          "rate": 0.826,
+          "ci_low": 0.8012673037329014,
+          "ci_high": 0.8482376497345165,
+          "half_width": 0.023485173000807547,
+          "agent": "Naive-PPO",
+          "challenge_rate": 0.826,
+          "deterministic_challenge_rate": 0.857,
+          "mean_challenge_prob": 0.8228537104892166,
+          "challenge_rate_action_phase": 0.892,
+          "challenge_rate_block_phase": 0.76,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "NFSP": {
+          "successes": 381,
+          "trials": 1000,
+          "rate": 0.381,
+          "ci_low": 0.35141031362749775,
+          "ci_high": 0.4115004548920643,
+          "half_width": 0.03004507063228329,
+          "agent": "NFSP",
+          "challenge_rate": 0.381,
+          "deterministic_challenge_rate": 0.374,
+          "mean_challenge_prob": 0.389804476051213,
+          "challenge_rate_action_phase": 0.284,
+          "challenge_rate_block_phase": 0.478,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Double-DQN": {
+          "successes": 678,
+          "trials": 1000,
+          "rate": 0.678,
+          "ci_low": 0.6484067877958661,
+          "ci_high": 0.7062308861832765,
+          "half_width": 0.028912049193705158,
+          "agent": "Double-DQN",
+          "challenge_rate": 0.678,
+          "deterministic_challenge_rate": 0.678,
+          "mean_challenge_prob": 0.6457421203106641,
+          "challenge_rate_action_phase": 0.714,
+          "challenge_rate_block_phase": 0.642,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "CardCounter": {
+          "successes": 1000,
+          "trials": 1000,
+          "rate": 1.0,
+          "ci_low": 0.996173241514445,
+          "ci_high": 1.0,
+          "half_width": 0.0019133792427775131,
+          "agent": "CardCounter",
+          "challenge_rate": 1.0,
+          "deterministic_challenge_rate": 1.0,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 1.0,
+          "challenge_rate_block_phase": 1.0,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Honest": {
+          "successes": 1000,
+          "trials": 1000,
+          "rate": 1.0,
+          "ci_low": 0.996173241514445,
+          "ci_high": 1.0,
+          "half_width": 0.0019133792427775131,
+          "agent": "Honest",
+          "challenge_rate": 1.0,
+          "deterministic_challenge_rate": 1.0,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 1.0,
+          "challenge_rate_block_phase": 1.0,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Cautious": {
+          "successes": 1000,
+          "trials": 1000,
+          "rate": 1.0,
+          "ci_low": 0.996173241514445,
+          "ci_high": 1.0,
+          "half_width": 0.0019133792427775131,
+          "agent": "Cautious",
+          "challenge_rate": 1.0,
+          "deterministic_challenge_rate": 1.0,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 1.0,
+          "challenge_rate_block_phase": 1.0,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Bluffer": {
+          "successes": 1000,
+          "trials": 1000,
+          "rate": 1.0,
+          "ci_low": 0.996173241514445,
+          "ci_high": 1.0,
+          "half_width": 0.0019133792427775131,
+          "agent": "Bluffer",
+          "challenge_rate": 1.0,
+          "deterministic_challenge_rate": 1.0,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 1.0,
+          "challenge_rate_block_phase": 1.0,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Random": {
+          "successes": 537,
+          "trials": 1000,
+          "rate": 0.537,
+          "ci_low": 0.5060124890263216,
+          "ci_high": 0.5677043308457475,
+          "half_width": 0.030845920909712943,
+          "agent": "Random",
+          "challenge_rate": 0.537,
+          "deterministic_challenge_rate": 0.537,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 0.52,
+          "challenge_rate_block_phase": 0.554,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        }
+      }
+    },
+    "four_player": {
+      "scenarios": 1000,
+      "num_players": 4,
+      "agents": {
+        "PFSP-PPO-4P": {
+          "successes": 934,
+          "trials": 1000,
+          "rate": 0.934,
+          "ci_low": 0.9168907240940241,
+          "ci_high": 0.9477876495405142,
+          "half_width": 0.015448462723245071,
+          "agent": "PFSP-PPO-4P",
+          "challenge_rate": 0.934,
+          "deterministic_challenge_rate": 0.941,
+          "mean_challenge_prob": 0.9229505169897456,
+          "challenge_rate_action_phase": 0.894,
+          "challenge_rate_block_phase": 0.974,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Double-DQN-4P": {
+          "successes": 388,
+          "trials": 1000,
+          "rate": 0.388,
+          "ci_low": 0.3582811184771855,
+          "ci_high": 0.41857607542357883,
+          "half_width": 0.030147478473196654,
+          "agent": "Double-DQN-4P",
+          "challenge_rate": 0.388,
+          "deterministic_challenge_rate": 0.388,
+          "mean_challenge_prob": 0.45116252969228665,
+          "challenge_rate_action_phase": 0.35,
+          "challenge_rate_block_phase": 0.426,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "CardCounter": {
+          "successes": 1000,
+          "trials": 1000,
+          "rate": 1.0,
+          "ci_low": 0.996173241514445,
+          "ci_high": 1.0,
+          "half_width": 0.0019133792427775131,
+          "agent": "CardCounter",
+          "challenge_rate": 1.0,
+          "deterministic_challenge_rate": 1.0,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 1.0,
+          "challenge_rate_block_phase": 1.0,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Honest": {
+          "successes": 1000,
+          "trials": 1000,
+          "rate": 1.0,
+          "ci_low": 0.996173241514445,
+          "ci_high": 1.0,
+          "half_width": 0.0019133792427775131,
+          "agent": "Honest",
+          "challenge_rate": 1.0,
+          "deterministic_challenge_rate": 1.0,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 1.0,
+          "challenge_rate_block_phase": 1.0,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        },
+        "Random": {
+          "successes": 491,
+          "trials": 1000,
+          "rate": 0.491,
+          "ci_low": 0.46010903314721446,
+          "ci_high": 0.5219598485055256,
+          "half_width": 0.030925407679155553,
+          "agent": "Random",
+          "challenge_rate": 0.491,
+          "deterministic_challenge_rate": 0.491,
+          "mean_challenge_prob": null,
+          "challenge_rate_action_phase": 0.5,
+          "challenge_rate_block_phase": 0.482,
+          "legal_action_count": 2.0,
+          "claimed_impossible_in_obs": 1.0
+        }
+      }
+    }
+  },
+  "exploitability_2p": {
+    "games": 1000,
+    "learner_steps": 500000,
+    "models": {
+      "PFSP-PPO": {
+        "target": "results/ppo_pfsp_2p/final.pt",
+        "exploiter_checkpoint": "results/exploiters/vs_pfsp_2p/final.pt",
+        "trained_now": false,
+        "learner_steps": 500000,
+        "games": 1000,
+        "exploiter_wins": 877,
+        "target_wins": 123,
+        "draws": 0,
+        "exploiter_win_rate": 0.877,
+        "ci95": [
+          0.8551887673529645,
+          0.8959258567489271
+        ],
+        "ci95_low": 0.8551887673529645,
+        "ci95_high": 0.8959258567489271,
+        "approx_exploitability": 0.377
+      },
+      "Naive-PPO": {
+        "target": "results/ppo_naive_2p/final.pt",
+        "exploiter_checkpoint": "results/exploiters/vs_naive_2p/final.pt",
+        "trained_now": false,
+        "learner_steps": 500000,
+        "games": 1000,
+        "exploiter_wins": 734,
+        "target_wins": 266,
+        "draws": 0,
+        "exploiter_win_rate": 0.734,
+        "ci95": [
+          0.7057558002431918,
+          0.7604532767855683
+        ],
+        "ci95_low": 0.7057558002431918,
+        "ci95_high": 0.7604532767855683,
+        "approx_exploitability": 0.23399999999999999
+      },
+      "NFSP": {
+        "target": "results/nfsp_2p/final.pt",
+        "exploiter_checkpoint": "results/exploiters/vs_nfsp_2p/final.pt",
+        "trained_now": false,
+        "learner_steps": 500000,
+        "games": 1000,
+        "exploiter_wins": 778,
+        "target_wins": 222,
+        "draws": 0,
+        "exploiter_win_rate": 0.778,
+        "ci95": [
+          0.7512053591381822,
+          0.8026669631438492
+        ],
+        "ci95_low": 0.7512053591381822,
+        "ci95_high": 0.8026669631438492,
+        "approx_exploitability": 0.278
+      },
+      "Double-DQN": {
+        "target": "results/ddqn_pfsp_2p/final.pt",
+        "exploiter_checkpoint": "results/exploiters/vs_ddqn_2p/final.pt",
+        "trained_now": true,
+        "learner_steps": 500000,
+        "games": 1000,
+        "exploiter_wins": 793,
+        "target_wins": 207,
+        "draws": 0,
+        "exploiter_win_rate": 0.793,
+        "ci95": [
+          0.7667904475082261,
+          0.8169670720192386
+        ],
+        "ci95_low": 0.7667904475082261,
+        "ci95_high": 0.8169670720192386,
+        "approx_exploitability": 0.29300000000000004
+      }
+    }
+  },
+  "snapshot_elo": {
+    "PFSP-PPO": {
+      "run": "results/ppo_pfsp_2p",
+      "games_per_baseline": 200,
+      "anchor_elos": {
+        "CardCounter": 1221.1690510062804,
+        "Honest": 1230.6029542858053,
+        "Cautious": 1235.9512246272993,
+        "Bluffer": 1020.8225141819561,
+        "Random": 1000.0
+      },
+      "snapshots": [
+        {
+          "snapshot": "step_000255546.pt",
+          "step": 255546,
+          "elo": 1345.5333658255968,
+          "avg_vs_baselines": 0.746,
+          "strong_avg": 0.6766666666666666,
+          "win_rates": {
+            "Random": 0.885,
+            "Honest": 0.715,
+            "Bluffer": 0.815,
+            "Cautious": 0.645,
+            "CardCounter": 0.67
+          }
+        },
+        {
+          "snapshot": "step_000502212.pt",
+          "step": 502212,
+          "elo": 1367.5274004966789,
+          "avg_vs_baselines": 0.768,
+          "strong_avg": 0.7833333333333333,
+          "win_rates": {
+            "Random": 0.76,
+            "Honest": 0.84,
+            "Bluffer": 0.73,
+            "Cautious": 0.705,
+            "CardCounter": 0.805
+          }
+        },
+        {
+          "snapshot": "step_000757482.pt",
+          "step": 757482,
+          "elo": 1306.5063193446963,
+          "avg_vs_baselines": 0.7040000000000001,
+          "strong_avg": 0.7366666666666667,
+          "win_rates": {
+            "Random": 0.645,
+            "Honest": 0.8,
+            "Bluffer": 0.665,
+            "Cautious": 0.65,
+            "CardCounter": 0.76
+          }
+        },
+        {
+          "snapshot": "step_001004386.pt",
+          "step": 1004386,
+          "elo": 1288.9757076001606,
+          "avg_vs_baselines": 0.6839999999999999,
+          "strong_avg": 0.6766666666666666,
+          "win_rates": {
+            "Random": 0.7,
+            "Honest": 0.69,
+            "Bluffer": 0.69,
+            "Cautious": 0.67,
+            "CardCounter": 0.67
+          }
+        },
+        {
+          "snapshot": "step_001251239.pt",
+          "step": 1251239,
+          "elo": 1303.8391780586003,
+          "avg_vs_baselines": 0.7010000000000001,
+          "strong_avg": 0.67,
+          "win_rates": {
+            "Random": 0.73,
+            "Honest": 0.66,
+            "Bluffer": 0.765,
+            "Cautious": 0.685,
+            "CardCounter": 0.665
+          }
+        },
+        {
+          "snapshot": "step_001506280.pt",
+          "step": 1506280,
+          "elo": 1345.5333658255968,
+          "avg_vs_baselines": 0.7460000000000001,
+          "strong_avg": 0.7200000000000001,
+          "win_rates": {
+            "Random": 0.77,
+            "Honest": 0.755,
+            "Bluffer": 0.8,
+            "Cautious": 0.725,
+            "CardCounter": 0.68
+          }
+        },
+        {
+          "snapshot": "step_001753133.pt",
+          "step": 1753133,
+          "elo": 1353.387713511694,
+          "avg_vs_baselines": 0.754,
+          "strong_avg": 0.7116666666666666,
+          "win_rates": {
+            "Random": 0.79,
+            "Honest": 0.735,
+            "Bluffer": 0.845,
+            "Cautious": 0.715,
+            "CardCounter": 0.685
+          }
+        },
+        {
+          "snapshot": "step_002008155.pt",
+          "step": 2008155,
+          "elo": 1389.8231667792984,
+          "avg_vs_baselines": 0.7889999999999999,
+          "strong_avg": 0.7516666666666666,
+          "win_rates": {
+            "Random": 0.89,
+            "Honest": 0.785,
+            "Bluffer": 0.8,
+            "Cautious": 0.735,
+            "CardCounter": 0.735
+          }
+        }
+      ]
+    },
+    "Naive-PPO": {
+      "run": "results/ppo_naive_2p",
+      "games_per_baseline": 200,
+      "anchor_elos": {
+        "CardCounter": 1221.1690510062804,
+        "Honest": 1230.6029542858053,
+        "Cautious": 1235.9512246272993,
+        "Bluffer": 1020.8225141819561,
+        "Random": 1000.0
+      },
+      "snapshots": [
+        {
+          "snapshot": "step_000256346.pt",
+          "step": 256346,
+          "elo": 1289.8389128066278,
+          "avg_vs_baselines": 0.685,
+          "strong_avg": 0.6433333333333333,
+          "win_rates": {
+            "Random": 0.75,
+            "Honest": 0.73,
+            "Bluffer": 0.745,
+            "Cautious": 0.51,
+            "CardCounter": 0.69
+          }
+        },
+        {
+          "snapshot": "step_000504227.pt",
+          "step": 504227,
+          "elo": 1246.4533111748535,
+          "avg_vs_baselines": 0.6329999999999999,
+          "strong_avg": 0.6383333333333333,
+          "win_rates": {
+            "Random": 0.62,
+            "Honest": 0.675,
+            "Bluffer": 0.63,
+            "Cautious": 0.63,
+            "CardCounter": 0.61
+          }
+        },
+        {
+          "snapshot": "step_000751799.pt",
+          "step": 751799,
+          "elo": 1270.2973024142934,
+          "avg_vs_baselines": 0.662,
+          "strong_avg": 0.5766666666666667,
+          "win_rates": {
+            "Random": 0.815,
+            "Honest": 0.54,
+            "Bluffer": 0.765,
+            "Cautious": 0.59,
+            "CardCounter": 0.6
+          }
+        },
+        {
+          "snapshot": "step_001000143.pt",
+          "step": 1000143,
+          "elo": 1313.6891999933864,
+          "avg_vs_baselines": 0.712,
+          "strong_avg": 0.7066666666666667,
+          "win_rates": {
+            "Random": 0.715,
+            "Honest": 0.74,
+            "Bluffer": 0.725,
+            "Cautious": 0.665,
+            "CardCounter": 0.715
+          }
+        },
+        {
+          "snapshot": "step_001250380.pt",
+          "step": 1250380,
+          "elo": 1258.6883689802905,
+          "avg_vs_baselines": 0.648,
+          "strong_avg": 0.5983333333333333,
+          "win_rates": {
+            "Random": 0.735,
+            "Honest": 0.615,
+            "Bluffer": 0.71,
+            "Cautious": 0.585,
+            "CardCounter": 0.595
+          }
+        },
+        {
+          "snapshot": "step_001507717.pt",
+          "step": 1507717,
+          "elo": 1258.6883689802905,
+          "avg_vs_baselines": 0.648,
+          "strong_avg": 0.6166666666666666,
+          "win_rates": {
+            "Random": 0.72,
+            "Honest": 0.615,
+            "Bluffer": 0.67,
+            "Cautious": 0.58,
+            "CardCounter": 0.655
+          }
+        },
+        {
+          "snapshot": "step_001756135.pt",
+          "step": 1756135,
+          "elo": 1279.5646094760637,
+          "avg_vs_baselines": 0.673,
+          "strong_avg": 0.635,
+          "win_rates": {
+            "Random": 0.725,
+            "Honest": 0.565,
+            "Bluffer": 0.735,
+            "Cautious": 0.665,
+            "CardCounter": 0.675
+          }
+        },
+        {
+          "snapshot": "step_002004752.pt",
+          "step": 2004752,
+          "elo": 1297.6689451274651,
+          "avg_vs_baselines": 0.6940000000000001,
+          "strong_avg": 0.6683333333333334,
+          "win_rates": {
+            "Random": 0.715,
+            "Honest": 0.66,
+            "Bluffer": 0.75,
+            "Cautious": 0.685,
+            "CardCounter": 0.66
+          }
+        }
+      ]
+    }
+  },
+  "timing": {
+    "sections": {
+      "round_robin_2p": 53.66457462310791,
+      "four_player": 50.104012966156006,
+      "behaviour": 50.2450156211853,
+      "impossible_claim_probe": 0.7370264530181885,
+      "exploitability": 41.71905827522278,
+      "snapshot_elo": 22.999759912490845
+    },
+    "total_seconds": 220.39670610427856
+  }
+}

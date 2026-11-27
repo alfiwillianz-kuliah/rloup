@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RLOUP — Coup Reinforcement Learning Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-left">
+      <a class="wordmark" href="#" id="wordmark-link">
+        <span class="wordmark-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M3 18h18M4 15l2-9 6 4 6-4 2 9H4z"/>
+          </svg>
+        </span>
+        <span class="wordmark-name">RLOUP</span>
+        <span class="wordmark-divider">/</span>
+        <span class="wordmark-sub">Coup RL Lab</span>
+      </a>
+    </div>
+
+    <nav class="nav-tabs" role="tablist" aria-label="Main sections">
+      <button class="nav-tab active" data-tab="arena" role="tab" aria-selected="true">Arena</button>
+      <button class="nav-tab" data-tab="tournament" role="tab" aria-selected="false">Tournament</button>
+      <button class="nav-tab" data-tab="benchmarks" role="tab" aria-selected="false">Benchmarks</button>
+    </nav>
+
+    <div class="masthead-right">
+      <span id="device-pill" class="meta-chip">
+        <span class="dot"></span>
+        <span class="meta-chip-text">Init</span>
+      </span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <!-- ================================================================ -->
+    <!-- TAB 1: PLAY ARENA                                                -->
+    <!-- ================================================================ -->
+    <section id="tab-arena" class="tab-panel active">
+      <div class="arena-shell">
+        <!-- Left Rail: Table Setup -->
+        <aside class="rail rail-left">
+          <div class="rail-section">
+            <div class="section-row">
+              <span class="kicker">Table</span>
+              <div class="inline-toggle" id="seat-count-toggle">
+                <button class="toggle-btn active" data-seats="2" type="button">2 Players</button>
+                <button class="toggle-btn" data-seats="4" type="button">4 Players</button>
+              </div>
+            </div>
+
+            <div class="preset-list">
+              <button class="preset-btn" data-preset="human-vs-pfsp" type="button">
+                <span>You vs PFSP-PPO</span>
+                <span class="preset-tag">1399</span>
+              </button>
+              <button class="preset-btn" data-preset="human-vs-ddqn" type="button">
+                <span>You vs Double-DQN</span>
+                <span class="preset-tag">1368</span>
+              </button>
+              <button class="preset-btn" data-preset="pfsp-vs-ddqn" type="button">
+                <span>Watch: PFSP vs DDQN</span>
+                <span class="preset-tag">AI</span>
+              </button>
+              <button class="preset-btn" data-preset="4p-mixed" type="button">
+                <span>4P Mixed Court</span>
+                <span class="preset-tag">4P</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="rail-section">
+            <span class="kicker">Seats</span>
+            <div id="seat-selectors" class="seat-selectors"></div>
+          </div>
+
+          <div class="rail-section">
+            <span class="kicker">Options</span>
+            <label class="switch-row">
+              <input id="opt-inspector" type="checkbox" checked />
+              <span>Policy probabilities &amp; values</span>
+            </label>
+            <label class="switch-row">
+              <input id="opt-xray" type="checkbox" />
+              <span>Reveal hands (spectate only)</span>
+            </label>
+
+            <div class="seed-field">
+              <label for="game-seed">Seed</label>
+              <div class="seed-controls">
+                <input id="game-seed" type="number" value="42" />
+                <button id="rand-seed-btn" class="icon-btn" type="button" title="Randomize seed" aria-label="Randomize seed">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M21 12a9 9 0 0 1-15.5 6.3L3 16m0-4a9 9 0 0 1 15.5-6.3L21 8"/>
+                    <path d="M21 3v5h-5M3 21v-5h5"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <button id="start-game-btn" class="btn-deal" type="button">Deal Hand</button>
+          </div>
+
+          <div class="rail-section rules-cheat">
+            <span class="kicker">Court Reference</span>
+            <dl class="ref-list">
+              <div><dt class="c-duke">Duke</dt><dd>Tax +3 · Blocks Aid</dd></div>
+              <div><dt class="c-assassin">Assassin</dt><dd>Assassinate (−3)</dd></div>
+              <div><dt class="c-captain">Captain</dt><dd>Steal +2 · Blocks Steal</dd></div>
+              <div><dt class="c-ambassador">Ambassador</dt><dd>Exchange · Blocks Steal</dd></div>
+              <div><dt class="c-contessa">Contessa</dt><dd>Blocks Assassinate</dd></div>
+            </dl>
+          </div>
+        </aside>
+
+        <!-- Center Stage: Tabletop -->
+        <section class="stage">
+          <div class="stage-bar">
+            <div class="stage-meta">
+              <span id="hud-turn" class="mono">Turn —</span>
+              <span class="sep">·</span>
+              <span id="hud-phase" class="phase-label">Ready</span>
+              <span class="sep">·</span>
+              <span id="hud-deck" class="mono muted">15 in court</span>
+            </div>
+
+            <div class="spectate-bar" id="spectate-controls" style="display:none;">
+              <button id="btn-step" class="btn-subtle" type="button">Step</button>
+              <button id="btn-autoplay" class="btn-subtle btn-accent" type="button">Play</button>
+              <label class="speed-control">
+                <span class="muted">Pace</span>
+                <input id="speed-slider" type="range" min="150" max="1600" step="150" value="650" />
+              </label>
+            </div>
+          </div>
+
+          <div id="table-board" class="table-board">
+            <div class="table-empty">
+              <div class="empty-sigil" aria-hidden="true">
+                <svg viewBox="0 0 64 64" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <rect x="14" y="8" width="36" height="48" rx="3"/>
+                  <rect x="19" y="13" width="26" height="38" rx="1.5" stroke-dasharray="2 2" opacity="0.5"/>
+                  <path d="M24 38h16M25 34l2-10 5 4 5-4 2 10H25z"/>
+                </svg>
+              </div>
+              <h2 class="serif-title">Take Your Seat at the Court</h2>
+              <p>Challenge trained self-play policies (PFSP-PPO, Double-DQN, Naive-PPO, NFSP) or spectate AI matchups with live probability readouts.</p>
+              <button id="empty-deal-btn" class="btn-deal btn-inline" type="button">Deal vs PFSP-PPO</button>
+            </div>
+          </div>
+
+          <!-- Action Bar -->
+          <div id="action-dock" class="action-dock hidden">
+            <div class="action-dock-top">
+              <span id="action-prompt" class="action-title">Your Turn</span>
+              <span id="action-hint" class="mono muted">Keys 1–9 supported</span>
+            </div>
+            <div id="action-buttons" class="action-grid"></div>
+          </div>
+        </section>
+
+        <!-- Right Rail: Policy Readout + Chronicle -->
+        <aside class="rail rail-right">
+          <div class="rail-section inspector-section">
+            <div class="section-row">
+              <span class="kicker">Policy Readout</span>
+              <span id="inspector-badge" class="mono muted">Idle</span>
+            </div>
+            <div id="inspector-content" class="inspector-body">
+              <p class="muted">Action distribution and critic / Q-value estimate appear here after each AI decision.</p>
+            </div>
+          </div>
+
+          <div class="rail-section ledger-section">
+            <div class="section-row">
+              <span class="kicker">Court Ledger</span>
+              <span id="log-count" class="mono muted">0</span>
+            </div>
+            <div id="game-log" class="ledger">
+              <p class="muted">No moves recorded yet.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- TAB 2: TOURNAMENT                                                -->
+    <!-- ================================================================ -->
+    <section id="tab-tournament" class="tab-panel">
+      <div class="tournament-shell">
+        <aside class="rail rail-left">
+          <div class="rail-section">
+            <div class="section-row">
+              <span class="kicker">Format</span>
+              <div class="inline-toggle" id="t-mode-toggle">
+                <button class="toggle-btn active" data-tmode="round_robin_2p" type="button">2P Round-Robin</button>
+                <button class="toggle-btn" data-tmode="table_4p" type="button">4P Table</button>
+              </div>
+            </div>
+            <p id="t-mode-hint" class="muted note">
+              Seat-balanced round-robin with live Bradley-Terry Elo and 95% Wilson intervals.
+            </p>
+          </div>
+
+          <div class="rail-section">
+            <span class="kicker">Competitors</span>
+            <div id="t-bot-list" class="t-bot-list"></div>
+          </div>
+
+          <div class="rail-section">
+            <div class="param-grid">
+              <div class="field">
+                <label for="t-games" id="t-games-label">Games / pair</label>
+                <input id="t-games" type="number" min="2" max="400" step="2" value="40" />
+              </div>
+              <div class="field">
+                <label for="t-seed">Seed</label>
+                <input id="t-seed" type="number" value="42" />
+              </div>
+            </div>
+
+            <div class="stack-gap">
+              <button id="t-start-btn" class="btn-deal" type="button">Run Tournament</button>
+              <button id="t-cancel-btn" class="btn-danger hidden" type="button">Stop Tournament</button>
+            </div>
+            <div id="t-error" class="error-note hidden"></div>
+          </div>
+        </aside>
+
+        <section class="tournament-main">
+          <header class="t-header">
+            <div>
+              <h2 id="t-title" class="serif-title">Tournament Desk</h2>
+              <p id="t-subtitle" class="muted">Select competitors on the left and launch a live benchmark match.</p>
+            </div>
+            <div class="t-telemetry">
+              <div class="telem-item"><span class="kicker">Games</span><span id="t-progress-text" class="mono">0 / 0</span></div>
+              <div class="telem-item"><span class="kicker">Throughput</span><span id="t-speed-text" class="mono">—</span></div>
+              <div class="telem-item"><span class="kicker">Time</span><span id="t-eta-text" class="mono">—</span></div>
+            </div>
+          </header>
+
+          <div class="progress-rail">
+            <div id="t-progress-fill" class="progress-bar" style="width:0%"></div>
+          </div>
+
+          <div id="t-standings-wrap" class="table-wrap">
+            <p class="muted empty-pad">Live Elo standings, win rates, and bluff telemetry will stream here.</p>
+          </div>
+
+          <div id="t-matrix-section" class="subsection hidden">
+            <div class="section-row">
+              <span class="kicker">Head-to-Head Matrix (Row vs Column)</span>
+              <span class="mono muted">Hover cell for 95% CI</span>
+            </div>
+            <div id="t-matrix-wrap" class="table-wrap"></div>
+          </div>
+
+          <div id="t-recent-section" class="subsection hidden">
+            <span class="kicker">Recent Results</span>
+            <div id="t-recent-list" class="recent-strip"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- TAB 3: LAB BENCHMARKS                                            -->
+    <!-- ================================================================ -->
+    <section id="tab-benchmarks" class="tab-panel">
+      <div class="bench-shell">
+        <header class="bench-header">
+          <div>
+            <span class="kicker">Evaluation Report</span>
+            <h2 id="bench-heading" class="serif-title">9×9 Round-Robin, Exploitability &amp; Offline SLM Reference</h2>
+          </div>
+          <button id="reload-bench-btn" class="btn-subtle" type="button">Refresh Data</button>
+        </header>
+
+        <div id="bench-summary" class="bench-summary">Loading saved benchmarks…</div>
+
+        <section class="subsection">
+          <div class="section-row">
+            <span class="kicker">Publication Figures (180 DPI)</span>
+            <span class="mono muted">Click any figure to inspect</span>
+          </div>
+          <div id="bench-figures" class="figures-grid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Figure Lightbox -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+    <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close">×</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div id="lightbox-cap" class="mono"></div>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
